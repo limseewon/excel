@@ -1,0 +1,1919 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>엑셀 단축키 모음 | 업무별 엑셀 단축키 완벽 정리</title>
+    <meta
+      name="description"
+      content="엑셀 단축키를 업무별로 정리했어요. 회계, 인사, 데이터분석, 일반 업무에서 자주 쓰는 단축키를 한눈에 확인하고 AI로 검색해보세요." />
+    <meta
+      name="keywords"
+      content="엑셀 단축키, excel 단축키, 엑셀 단축키 모음, 엑셀 빠른 키, 엑셀 팁, 회계 엑셀, 인사 엑셀" />
+    <meta name="author" content="Excel Shortcut" />
+    <meta property="og:title" content="엑셀 단축키 모음 | 업무별 완벽 정리" />
+    <meta
+      property="og:description"
+      content="회계, 인사, 데이터분석 등 업무별 엑셀 단축키를 한눈에. AI 검색으로 원하는 단축키를 바로 찾아보세요." />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://limseewon.github.io/excel/" />
+    <style>
+      :root {
+        --bg: #f7f7f5;
+        --surface: #fff;
+        --border: #e5e5e2;
+        --border-hover: #d0d0cb;
+        --text: #1a1a18;
+        --text-muted: #888884;
+        --text-hint: #b0b0aa;
+        --accent: #3c3489;
+        --accent-light: #eeedfe;
+        --accent-text: #26215c;
+        --key-bg: #f0f0ed;
+        --key-border: #d8d8d4;
+        --radius-sm: 6px;
+        --radius-md: 10px;
+        --radius-lg: 14px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          -apple-system, "Pretendard", "Apple SD Gothic Neo", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      header {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 0 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        height: 60px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--accent);
+        white-space: nowrap;
+        text-decoration: none;
+      }
+      .logo svg {
+        width: 22px;
+        height: 22px;
+      }
+      .search-wrap {
+        flex: 1;
+        max-width: 440px;
+        position: relative;
+      }
+      .search-wrap svg {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        color: var(--text-hint);
+        pointer-events: none;
+      }
+      #search {
+        width: 100%;
+        padding: 9px 12px 9px 36px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--bg);
+        font-size: 14px;
+        color: var(--text);
+        outline: none;
+        transition: border-color 0.15s;
+        font-family: inherit;
+      }
+      #search:focus {
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+      #search::placeholder {
+        color: var(--text-hint);
+      }
+      .ai-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px;
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: inherit;
+        transition: opacity 0.15s;
+      }
+      .ai-btn:hover {
+        opacity: 0.88;
+      }
+      .ai-btn svg {
+        width: 15px;
+        height: 15px;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .job-tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .job-tab {
+        padding: 7px 18px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text-muted);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s;
+        font-family: inherit;
+      }
+      .job-tab:hover {
+        border-color: var(--border-hover);
+        color: var(--text);
+      }
+      .job-tab.active {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .job-desc {
+        font-size: 13px;
+        color: var(--text-hint);
+        margin-bottom: 1.25rem;
+      }
+      .cats {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+      .cat-btn {
+        padding: 5px 14px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text-muted);
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.15s;
+        font-family: inherit;
+      }
+      .cat-btn:hover {
+        border-color: var(--border-hover);
+        color: var(--text);
+      }
+      .cat-btn.active {
+        background: var(--accent-light);
+        color: var(--accent-text);
+        border-color: var(--accent);
+      }
+      .result-count {
+        font-size: 13px;
+        color: var(--text-hint);
+        margin-bottom: 1rem;
+      }
+      .section {
+        margin-bottom: 2rem;
+      }
+      .section-label {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-hint);
+        margin-bottom: 0.75rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 10px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        transition: border-color 0.15s;
+        cursor: pointer;
+      }
+      .card:hover {
+        border-color: var(--accent);
+        background: var(--accent-light);
+      }
+      .card-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .card-desc {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text);
+        margin-bottom: 3px;
+      }
+      .card-tip {
+        font-size: 12px;
+        color: var(--text-hint);
+      }
+      .keys {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-shrink: 0;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .key {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 9px;
+        background: var(--key-bg);
+        border: 1px solid var(--key-border);
+        border-bottom-width: 2px;
+        border-radius: var(--radius-sm);
+        font-size: 12px;
+        font-family: "SF Mono", "Fira Code", monospace;
+        color: var(--text);
+        white-space: nowrap;
+      }
+      .plus {
+        font-size: 11px;
+        color: var(--text-hint);
+      }
+      .empty {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--text-hint);
+        font-size: 14px;
+      }
+      .empty p:first-child {
+        font-size: 18px;
+        margin-bottom: 0.5rem;
+        color: var(--text-muted);
+      }
+      /* AI 패널 */
+      .ai-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        margin-bottom: 1.75rem;
+        overflow: hidden;
+        display: none;
+      }
+      .ai-panel.open {
+        display: block;
+      }
+      .ai-panel-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+        background: var(--accent-light);
+      }
+      .ai-panel-header span {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--accent-text);
+        flex: 1;
+      }
+      .ai-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-muted);
+        font-size: 20px;
+        line-height: 1;
+        padding: 0;
+        font-family: inherit;
+      }
+      .ai-input-row {
+        display: flex;
+        gap: 8px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      #ai-query {
+        flex: 1;
+        padding: 9px 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        font-size: 14px;
+        font-family: inherit;
+        color: var(--text);
+        outline: none;
+        background: var(--bg);
+      }
+      #ai-query:focus {
+        border-color: var(--accent);
+        background: var(--surface);
+      }
+      .ai-ask-btn {
+        padding: 9px 16px;
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        font-family: inherit;
+        white-space: nowrap;
+        transition: opacity 0.15s;
+      }
+      .ai-ask-btn:hover {
+        opacity: 0.88;
+      }
+      .ai-ask-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      .ai-answer {
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.8;
+        color: var(--text);
+        min-height: 60px;
+        white-space: pre-wrap;
+      }
+      .typing-dots span {
+        display: inline-block;
+        animation: blink 1.2s infinite;
+        font-size: 20px;
+      }
+      .typing-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .typing-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      @keyframes blink {
+        0%,
+        80%,
+        100% {
+          opacity: 0.2;
+        }
+        40% {
+          opacity: 1;
+        }
+      }
+      /* 모달 */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .modal {
+        background: var(--surface);
+        border-radius: var(--radius-lg);
+        width: 100%;
+        max-width: 520px;
+        max-height: 90vh;
+        overflow-y: auto;
+        border: 1px solid var(--border);
+      }
+      .modal-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 20px 20px 0;
+      }
+      .modal-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .modal-close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 22px;
+        color: var(--text-muted);
+        line-height: 1;
+        padding: 0;
+        flex-shrink: 0;
+      }
+      .modal-keys {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+      }
+      .modal-body {
+        padding: 0 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .modal-section-title {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--text-hint);
+        margin-bottom: 6px;
+      }
+      .modal-section-content {
+        font-size: 14px;
+        color: var(--text);
+        line-height: 1.7;
+      }
+      .modal-steps {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .modal-steps li {
+        display: flex;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text);
+      }
+      .modal-steps li .step-num {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent-light);
+        color: var(--accent-text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 600;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .modal-example {
+        background: var(--bg);
+        border-radius: var(--radius-md);
+        padding: 12px 14px;
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        border-left: 3px solid var(--accent);
+      }
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 13px;
+        color: var(--text-hint);
+        border-top: 1px solid var(--border);
+        margin-top: 2rem;
+      }
+      @media (max-width: 640px) {
+        header {
+          padding: 0 1rem;
+        }
+        main {
+          padding: 1.25rem 1rem;
+        }
+        .logo span {
+          display: none;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a class="logo" href="#">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18M9 21V9" />
+          </svg>
+          <span>엑셀 단축키</span>
+        </a>
+        <div class="search-wrap">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          <input
+            id="search"
+            type="text"
+            placeholder="단축키 검색... (예: 복사, 저장, 합계)" />
+        </div>
+        <button class="ai-btn" id="ai-toggle-btn">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2">
+            <path
+              d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+          </svg>
+          AI 검색
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="ai-panel" id="ai-panel">
+        <div class="ai-panel-header">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#3C3489"
+            stroke-width="2">
+            <path
+              d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
+          </svg>
+          <span>하고 싶은 작업을 말해주세요 — 단축키를 찾아드릴게요</span>
+          <button class="ai-close" id="ai-close">×</button>
+        </div>
+        <div class="ai-input-row">
+          <input
+            id="ai-query"
+            type="text"
+            placeholder="예: 여러 셀 내용을 한 줄로 합치고 싶어요" />
+          <button class="ai-ask-btn" id="ai-ask">찾아보기</button>
+        </div>
+        <div class="ai-answer" id="ai-answer"></div>
+      </div>
+
+      <div class="job-tabs" id="job-tabs"></div>
+      <div class="job-desc" id="job-desc"></div>
+      <div class="cats" id="cats"></div>
+      <div class="result-count" id="count"></div>
+      <div id="list"></div>
+    </main>
+
+    <footer>
+      <p>
+        엑셀 단축키 모음 · Windows 기준 · 카드를 클릭하면 사용법을 볼 수 있어요
+      </p>
+    </footer>
+
+    <!-- 모달 -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="modal-title" id="modal-title"></div>
+          <button class="modal-close" id="modal-close">×</button>
+        </div>
+        <div class="modal-keys" id="modal-keys"></div>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
+
+    <script>
+      const ALL = [
+        {
+          cat: "탐색",
+          desc: "셀 이동",
+          tip: "방향키로 한 칸씩 이동",
+          keys: [["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "엑셀에서 가장 기본적인 이동이에요. 마우스 없이 키보드만으로 셀을 이동할 때 사용해요.",
+          steps: [
+            "이동하고 싶은 방향의 화살표 키를 눌러요",
+            "한 번 누를 때마다 한 칸씩 이동해요",
+          ],
+          example:
+            "A1에서 오른쪽 화살표를 누르면 B1로, 아래 화살표를 누르면 A2로 이동해요.",
+        },
+        {
+          cat: "탐색",
+          desc: "데이터 끝으로 이동",
+          tip: "빈 셀 전까지 한 번에",
+          keys: [["Ctrl"], ["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "수백 행의 데이터에서 마지막 행으로 한 번에 이동하고 싶을 때 써요. 스크롤 대신 이걸 쓰면 엄청 빨라요.",
+          steps: [
+            "이동하고 싶은 방향을 정해요",
+            "Ctrl을 누른 채 방향키를 눌러요",
+            "데이터가 끊기는 마지막 셀로 이동해요",
+          ],
+          example:
+            "A1에서 Ctrl+↓ 누르면 A열 데이터의 가장 마지막 행으로 순식간에 이동해요.",
+        },
+        {
+          cat: "탐색",
+          desc: "시트 처음(A1)으로",
+          tip: "",
+          keys: [["Ctrl"], ["Home"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "스크롤을 많이 내렸을 때 다시 처음으로 돌아가고 싶을 때 써요.",
+          steps: ["Ctrl + Home을 동시에 눌러요", "바로 A1 셀로 이동해요"],
+          example:
+            "데이터 1000번째 행에 있다가 Ctrl+Home 누르면 바로 A1로 돌아와요.",
+        },
+        {
+          cat: "탐색",
+          desc: "시트 끝으로",
+          tip: "데이터 마지막 셀",
+          keys: [["Ctrl"], ["End"]],
+          jobs: ["전체", "일반", "데이터분석"],
+          when: "데이터가 어디까지 있는지 확인하거나 마지막 행에 새 데이터를 추가할 때 써요.",
+          steps: [
+            "Ctrl + End를 동시에 눌러요",
+            "데이터가 있는 가장 마지막 셀로 이동해요",
+          ],
+          example:
+            "A1:F500에 데이터가 있으면 Ctrl+End 누를 때 F500으로 이동해요.",
+        },
+        {
+          cat: "탐색",
+          desc: "다음 시트로",
+          tip: "",
+          keys: [["Ctrl"], ["Page↓"]],
+          jobs: ["전체", "일반", "회계", "인사"],
+          when: "여러 시트로 구성된 파일에서 시트 간 이동할 때 써요. 탭을 마우스로 클릭하는 것보다 빠르고 편해요.",
+          steps: [
+            "Ctrl + Page Down을 동시에 눌러요",
+            "오른쪽 다음 시트로 이동해요",
+          ],
+          example:
+            "1월~12월 시트가 있을 때 Ctrl+Page↓ 누르면 1월→2월→3월 순으로 이동해요.",
+        },
+        {
+          cat: "탐색",
+          desc: "이전 시트로",
+          tip: "",
+          keys: [["Ctrl"], ["Page↑"]],
+          jobs: ["전체", "일반", "회계", "인사"],
+          when: "다음 시트 단축키와 반대로, 이전 시트로 돌아갈 때 써요.",
+          steps: [
+            "Ctrl + Page Up을 동시에 눌러요",
+            "왼쪽 이전 시트로 이동해요",
+          ],
+          example: "3월 시트에서 Ctrl+Page↑ 누르면 2월 시트로 돌아가요.",
+        },
+        {
+          cat: "탐색",
+          desc: "특정 셀로 이동",
+          tip: "셀 주소 직접 입력",
+          keys: [["Ctrl"], ["G"]],
+          jobs: ["전체", "일반", "데이터분석"],
+          when: "멀리 떨어진 셀로 바로 이동하거나 특정 조건의 셀을 선택할 때 써요.",
+          steps: [
+            "Ctrl + G를 눌러요",
+            "이동 창이 열리면 셀 주소를 입력해요 (예: Z100)",
+            "확인을 누르면 해당 셀로 이동해요",
+          ],
+          example:
+            "Z1000 셀로 가야 할 때 Ctrl+G → Z1000 입력 → 엔터 하면 바로 이동해요.",
+        },
+        {
+          cat: "탐색",
+          desc: "이름 상자로 커서 이동",
+          tip: "F5 대신 빠른 이동",
+          keys: [["F5"]],
+          jobs: ["전체", "일반"],
+          when: "Ctrl+G와 비슷하지만 이동 대화상자를 열어서 특수 셀(빈 셀, 수식 셀 등)을 선택할 때도 유용해요.",
+          steps: [
+            "F5를 눌러요",
+            "이동 대화상자가 열려요",
+            "셀 주소 입력 또는 옵션에서 특수 조건 선택 후 확인",
+          ],
+          example:
+            "F5 → 옵션 → 빈 셀 선택하면 비어있는 모든 셀을 한 번에 선택할 수 있어요.",
+        },
+        // 선택
+        {
+          cat: "선택",
+          desc: "연속 범위 선택",
+          tip: "방향키와 함께",
+          keys: [["Shift"], ["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "마우스 드래그 없이 키보드로 범위를 선택할 때 써요. 정확한 범위 선택에 유용해요.",
+          steps: [
+            "시작 셀에 커서를 놓아요",
+            "Shift를 누른 채 방향키로 범위를 넓혀요",
+          ],
+          example: "A1에서 Shift+↓를 5번 누르면 A1:A6이 선택돼요.",
+        },
+        {
+          cat: "선택",
+          desc: "데이터 끝까지 선택",
+          tip: "",
+          keys: [["Ctrl"], ["Shift"], ["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "긴 데이터 전체를 한 번에 선택할 때 써요. 예를 들어 A열 전체 데이터에 서식을 줄 때 유용해요.",
+          steps: [
+            "시작 셀을 클릭해요",
+            "Ctrl + Shift + 방향키를 동시에 눌러요",
+            "데이터 끝까지 선택돼요",
+          ],
+          example:
+            "A1에서 Ctrl+Shift+↓ 누르면 A열의 마지막 데이터까지 한 번에 선택돼요.",
+        },
+        {
+          cat: "선택",
+          desc: "행 전체 선택",
+          tip: "",
+          keys: [["Shift"], ["Space"]],
+          jobs: ["전체", "일반", "인사", "회계"],
+          when: "특정 행 전체를 선택해서 삭제하거나 서식을 줄 때 써요.",
+          steps: [
+            "선택하고 싶은 행의 아무 셀에 커서를 놓아요",
+            "Shift + Space를 눌러요",
+            "해당 행 전체가 선택돼요",
+          ],
+          example:
+            "3행을 통째로 삭제하려면 3행 아무 셀 클릭 → Shift+Space → Ctrl+- 순으로 눌러요.",
+        },
+        {
+          cat: "선택",
+          desc: "열 전체 선택",
+          tip: "",
+          keys: [["Ctrl"], ["Space"]],
+          jobs: ["전체", "일반", "데이터분석"],
+          when: "특정 열 전체를 선택해서 서식을 바꾸거나 삭제할 때 써요.",
+          steps: [
+            "선택하고 싶은 열의 아무 셀에 커서를 놓아요",
+            "Ctrl + Space를 눌러요",
+            "해당 열 전체가 선택돼요",
+          ],
+          example: "B열 너비를 바꾸려면 B열 아무 셀 → Ctrl+Space → 서식 적용.",
+        },
+        {
+          cat: "선택",
+          desc: "시트 전체 선택",
+          tip: "",
+          keys: [["Ctrl"], ["A"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "시트 전체에 같은 폰트, 글자 크기 등 서식을 한 번에 줄 때 써요.",
+          steps: [
+            "Ctrl + A를 눌러요",
+            "시트 전체가 선택돼요",
+            "원하는 서식을 적용해요",
+          ],
+          example:
+            "전체 선택 후 폰트를 맑은고딕으로 바꾸면 시트 전체 폰트가 한 번에 변경돼요.",
+        },
+        {
+          cat: "선택",
+          desc: "비연속 셀 추가 선택",
+          tip: "Ctrl 누른 채 클릭",
+          keys: [["Ctrl"], ["클릭"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "떨어진 여러 셀에 같은 서식을 줄 때 써요. 예를 들어 A1, C3, E5처럼 떨어진 셀들을 한 번에 선택할 때.",
+          steps: [
+            "첫 번째 셀을 클릭해요",
+            "Ctrl을 누른 채 나머지 셀들을 클릭해요",
+            "선택된 모든 셀에 서식 적용 가능",
+          ],
+          example:
+            "A1, C1, E1에 동시에 배경색을 주려면 Ctrl 누른 채 세 셀 클릭 후 색 적용.",
+        },
+        {
+          cat: "선택",
+          desc: "현재 영역 선택",
+          tip: "빈 셀로 둘러싼 범위",
+          keys: [["Ctrl"], ["Shift"], ["*"]],
+          jobs: ["전체", "데이터분석"],
+          when: "표 형태의 데이터 전체를 빠르게 선택할 때 써요. 빈 행/열로 둘러싸인 영역을 자동으로 인식해요.",
+          steps: [
+            "데이터 안 아무 셀이나 클릭해요",
+            "Ctrl + Shift + * (숫자패드의 *)을 눌러요",
+            "표 전체가 자동으로 선택돼요",
+          ],
+          example:
+            "100행짜리 표 안에 커서를 놓고 Ctrl+Shift+* 누르면 표 전체가 선택돼요.",
+        },
+        // 편집
+        {
+          cat: "편집",
+          desc: "복사",
+          tip: "",
+          keys: [["Ctrl"], ["C"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "셀 내용, 서식, 수식을 복사할 때 써요. 가장 기본이 되는 단축키예요.",
+          steps: [
+            "복사할 셀 또는 범위를 선택해요",
+            "Ctrl + C를 눌러요",
+            "점선 테두리가 생기면 복사 완료",
+            "붙여넣을 위치에서 Ctrl+V",
+          ],
+          example:
+            "A1:A10 데이터를 B열에 복사하려면 A1:A10 선택 → Ctrl+C → B1 클릭 → Ctrl+V.",
+        },
+        {
+          cat: "편집",
+          desc: "잘라내기",
+          tip: "",
+          keys: [["Ctrl"], ["X"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "셀 내용을 다른 위치로 이동할 때 써요. 복사와 달리 원본이 삭제돼요.",
+          steps: [
+            "이동할 셀을 선택해요",
+            "Ctrl + X를 눌러요",
+            "원하는 위치에서 Ctrl+V로 붙여넣기",
+          ],
+          example:
+            "A열 데이터를 C열로 옮기려면 A열 선택 → Ctrl+X → C1 → Ctrl+V.",
+        },
+        {
+          cat: "편집",
+          desc: "붙여넣기",
+          tip: "",
+          keys: [["Ctrl"], ["V"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "복사하거나 잘라낸 내용을 붙여넣을 때 써요.",
+          steps: [
+            "복사(Ctrl+C) 또는 잘라내기(Ctrl+X) 먼저 해요",
+            "붙여넣을 위치 셀을 클릭해요",
+            "Ctrl + V를 눌러요",
+          ],
+          example:
+            "복사한 내용을 여러 곳에 붙여넣고 싶으면 Ctrl+C 한 번 후 여러 위치에서 Ctrl+V 반복.",
+        },
+        {
+          cat: "편집",
+          desc: "선택하여 붙여넣기",
+          tip: "값만, 서식만 등 선택 가능",
+          keys: [["Ctrl"], ["Alt"], ["V"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "수식 결과값만 붙여넣거나 서식만 복사할 때 써요. 수식이 있는 셀을 값으로만 붙여넣을 때 특히 유용해요.",
+          steps: [
+            "복사할 셀을 Ctrl+C로 복사해요",
+            "붙여넣을 위치 클릭",
+            "Ctrl + Alt + V를 눌러요",
+            "값, 서식, 수식 등 원하는 옵션 선택 후 확인",
+          ],
+          example:
+            'SUM 수식 결과를 다른 시트에 숫자로만 붙여넣으려면 Ctrl+C → Ctrl+Alt+V → "값" 선택.',
+        },
+        {
+          cat: "편집",
+          desc: "실행 취소",
+          tip: "",
+          keys: [["Ctrl"], ["Z"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "실수로 내용을 지웠거나 잘못 입력했을 때 이전 상태로 돌아가요.",
+          steps: [
+            "Ctrl + Z를 눌러요",
+            "직전 작업이 취소돼요",
+            "여러 번 누르면 계속 이전 단계로 돌아가요",
+          ],
+          example:
+            "실수로 데이터를 삭제했으면 Ctrl+Z를 눌러서 복구해요. 여러 번 누르면 그 전 전 상태로도 돌아가요.",
+        },
+        {
+          cat: "편집",
+          desc: "다시 실행",
+          tip: "",
+          keys: [["Ctrl"], ["Y"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "Ctrl+Z로 취소한 작업을 다시 실행하고 싶을 때 써요.",
+          steps: [
+            "Ctrl+Z로 취소한 직후",
+            "Ctrl + Y를 눌러요",
+            "취소했던 작업이 다시 실행돼요",
+          ],
+          example:
+            "Ctrl+Z로 너무 많이 되돌렸으면 Ctrl+Y를 눌러서 앞으로 다시 가요.",
+        },
+        {
+          cat: "편집",
+          desc: "셀 내용 삭제",
+          tip: "",
+          keys: [["Delete"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "셀의 내용만 지우고 서식은 유지하고 싶을 때 써요. Backspace와 달리 편집 모드로 들어가지 않아요.",
+          steps: [
+            "삭제할 셀이나 범위를 선택해요",
+            "Delete 키를 눌러요",
+            "내용이 삭제되고 서식은 유지돼요",
+          ],
+          example:
+            "데이터를 지우고 다시 입력할 때 Delete로 지우면 셀 색상, 테두리 등 서식은 그대로 남아요.",
+        },
+        {
+          cat: "편집",
+          desc: "셀 편집 모드",
+          tip: "커서를 셀 안으로",
+          keys: [["F2"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "셀 내용 일부만 수정하고 싶을 때 써요. 더블클릭과 동일한 효과예요.",
+          steps: [
+            "수정할 셀을 클릭해요",
+            "F2를 눌러요",
+            "셀 안에 커서가 생겨요",
+            "내용 수정 후 Enter",
+          ],
+          example:
+            'A1에 "2024년도"라고 써있을 때 F2 누르면 커서가 안으로 들어가서 일부만 수정할 수 있어요.',
+        },
+        {
+          cat: "편집",
+          desc: "행 삽입",
+          tip: "선택한 행 위에 삽입",
+          keys: [["Ctrl"], ["+"]],
+          jobs: ["전체", "일반", "인사", "회계"],
+          when: "기존 데이터 사이에 새 행을 추가해야 할 때 써요.",
+          steps: [
+            "삽입하고 싶은 위치 아래 행 번호를 클릭해 행 전체 선택",
+            "Ctrl + + (더하기)를 눌러요",
+            "위에 새 행이 삽입돼요",
+          ],
+          example:
+            "3행과 4행 사이에 행을 추가하려면 4행 번호 클릭 → Ctrl++ → 3.5행 위치에 새 행 생성.",
+        },
+        {
+          cat: "편집",
+          desc: "행/열 삭제",
+          tip: "",
+          keys: [["Ctrl"], ["-"]],
+          jobs: ["전체", "일반", "인사", "회계", "데이터분석"],
+          when: "불필요한 행이나 열을 삭제할 때 써요.",
+          steps: [
+            "삭제할 행 번호나 열 문자를 클릭해 전체 선택",
+            "Ctrl + - (빼기)를 눌러요",
+            "행/열이 삭제돼요",
+          ],
+          example: "빈 행을 지우려면 행 번호 클릭 → Ctrl+- 하면 바로 삭제돼요.",
+        },
+        {
+          cat: "편집",
+          desc: "현재 날짜 입력",
+          tip: "오늘 날짜 바로 입력",
+          keys: [["Ctrl"], [";"]],
+          jobs: ["전체", "일반", "인사", "회계"],
+          when: "작업일, 기안일, 확인일 등 오늘 날짜를 빠르게 입력할 때 써요. 날짜가 자동으로 업데이트되지 않는 고정값이에요.",
+          steps: [
+            "날짜를 입력할 셀을 클릭해요",
+            "Ctrl + ; (세미콜론)을 눌러요",
+            "오늘 날짜가 바로 입력돼요",
+          ],
+          example:
+            "출결 관리 시트에서 오늘 날짜 입력할 때 Ctrl+; 하면 2025-06-23 형태로 바로 입력돼요.",
+        },
+        {
+          cat: "편집",
+          desc: "현재 시간 입력",
+          tip: "지금 시각 바로 입력",
+          keys: [["Ctrl"], ["Shift"], [";"]],
+          jobs: ["전체", "일반", "인사"],
+          when: "업무 시작/종료 시각을 기록할 때 써요.",
+          steps: [
+            "시간을 입력할 셀을 클릭해요",
+            "Ctrl + Shift + ; 를 눌러요",
+            "현재 시각이 입력돼요",
+          ],
+          example:
+            "재택근무 시작 시각 기록할 때 Ctrl+Shift+; 누르면 오전 9:05 형태로 입력돼요.",
+        },
+        {
+          cat: "편집",
+          desc: "위 셀 내용 복사",
+          tip: "아래로 채울 때 빠름",
+          keys: [["Ctrl"], ["D"]],
+          jobs: ["전체", "일반", "인사", "회계", "데이터분석"],
+          when: "바로 위 셀의 내용을 현재 셀에 복사할 때, 또는 여러 셀 선택 후 위 내용을 아래로 채울 때 써요.",
+          steps: [
+            "위 셀 내용을 복사할 셀을 선택해요 (여러 셀 선택 가능)",
+            "Ctrl + D를 눌러요",
+            "위 셀 내용이 복사돼요",
+          ],
+          example:
+            "A1에 수식이 있을 때 A1:A10 선택 후 Ctrl+D 하면 A2~A10에 수식이 자동으로 채워져요.",
+        },
+        {
+          cat: "편집",
+          desc: "왼쪽 셀 내용 복사",
+          tip: "오른쪽으로 채울 때",
+          keys: [["Ctrl"], ["R"]],
+          jobs: ["전체", "일반", "데이터분석"],
+          when: "왼쪽 셀의 내용을 오른쪽으로 채울 때 써요. Ctrl+D의 가로 버전이에요.",
+          steps: [
+            "왼쪽 셀 내용을 복사할 셀을 선택해요",
+            "Ctrl + R을 눌러요",
+            "왼쪽 셀 내용이 오른쪽으로 채워져요",
+          ],
+          example:
+            "A1 수식을 B1~F1에 적용하려면 A1:F1 선택 후 Ctrl+R 하면 한 번에 채워져요.",
+        },
+        {
+          cat: "편집",
+          desc: "찾기",
+          tip: "",
+          keys: [["Ctrl"], ["F"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "대용량 데이터에서 특정 값이나 텍스트를 찾을 때 써요.",
+          steps: [
+            "Ctrl + F를 눌러요",
+            "찾기 창이 열려요",
+            "검색어 입력 후 Enter 또는 다음 찾기 클릭",
+          ],
+          example:
+            '1000행 데이터에서 "홍길동"을 찾으려면 Ctrl+F → "홍길동" 입력 → Enter.',
+        },
+        {
+          cat: "편집",
+          desc: "바꾸기",
+          tip: "",
+          keys: [["Ctrl"], ["H"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: '특정 값을 일괄 변경할 때 써요. 예를 들어 "부장"을 모두 "이사"로 바꾸는 경우.',
+          steps: [
+            "Ctrl + H를 눌러요",
+            "찾을 내용과 바꿀 내용 입력",
+            "모두 바꾸기 클릭",
+          ],
+          example:
+            '"2024"를 모두 "2025"로 바꾸려면 Ctrl+H → 찾을 내용: 2024, 바꿀 내용: 2025 → 모두 바꾸기.',
+        },
+        {
+          cat: "편집",
+          desc: "메모 삽입",
+          tip: "셀에 메모 달기",
+          keys: [["Shift"], ["F2"]],
+          jobs: ["전체", "일반", "인사", "기획"],
+          when: "셀에 추가 설명이나 검토 의견을 달아놓고 싶을 때 써요. 셀에 빨간 삼각형이 생겨서 메모가 있음을 표시해요.",
+          steps: [
+            "메모를 달 셀을 선택해요",
+            "Shift + F2를 눌러요",
+            "메모 입력창이 열려요",
+            "내용 입력 후 셀 밖을 클릭",
+          ],
+          example:
+            '예산 항목에 "CFO 승인 필요" 메모를 달아두면 다른 사람이 열었을 때 확인할 수 있어요.',
+        },
+        // 서식
+        {
+          cat: "서식",
+          desc: "굵게",
+          tip: "",
+          keys: [["Ctrl"], ["B"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
+          when: "제목, 합계 행, 중요 항목을 강조할 때 써요.",
+          steps: [
+            "굵게 할 셀이나 텍스트를 선택해요",
+            "Ctrl + B를 눌러요",
+            "다시 누르면 굵기가 해제돼요",
+          ],
+          example: "표 헤더 행을 선택하고 Ctrl+B 누르면 제목이 굵게 강조돼요.",
+        },
+        {
+          cat: "서식",
+          desc: "기울임",
+          tip: "",
+          keys: [["Ctrl"], ["I"]],
+          jobs: ["전체", "일반", "기획"],
+          when: "주석이나 부연 설명, 강조 효과가 필요할 때 써요.",
+          steps: ["기울임 할 셀을 선택해요", "Ctrl + I를 눌러요"],
+          example: "비고 열의 내용을 기울임체로 처리해서 본문과 구분해요.",
+        },
+        {
+          cat: "서식",
+          desc: "밑줄",
+          tip: "",
+          keys: [["Ctrl"], ["U"]],
+          jobs: ["전체", "일반", "회계", "기획"],
+          when: "링크처럼 보이게 하거나 중요 수치 강조에 써요.",
+          steps: ["밑줄 칠 셀을 선택해요", "Ctrl + U를 눌러요"],
+          example: "합계 금액 셀에 밑줄을 그어 강조해요.",
+        },
+        {
+          cat: "서식",
+          desc: "취소선",
+          tip: "",
+          keys: [["Ctrl"], ["5"]],
+          jobs: ["전체", "일반"],
+          when: "완료된 항목이나 삭제 예정 항목을 표시할 때 써요.",
+          steps: ["취소선 칠 셀을 선택해요", "Ctrl + 5를 눌러요"],
+          example: "완료된 할 일 목록에 취소선을 그어 처리됨을 표시해요.",
+        },
+        {
+          cat: "서식",
+          desc: "셀 서식 열기",
+          tip: "숫자, 정렬, 테두리 등 모두",
+          keys: [["Ctrl"], ["1"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
+          when: "숫자 형식, 정렬, 글꼴, 테두리, 채우기 등 세부 서식을 한꺼번에 설정할 때 써요.",
+          steps: [
+            "서식을 바꿀 셀을 선택해요",
+            "Ctrl + 1을 눌러요",
+            "셀 서식 창이 열려요",
+            "탭에서 원하는 항목 설정",
+          ],
+          example:
+            '금액을 #,##0원 형식으로 표시하려면 Ctrl+1 → 표시 형식 탭 → 사용자 지정 → #,##0"원" 입력.',
+        },
+        {
+          cat: "서식",
+          desc: "열 너비 자동 맞춤",
+          tip: "내용에 딱 맞게",
+          keys: [["Alt"], ["H"], ["O"], ["I"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
+          when: "내용이 잘려 보일 때 열 너비를 내용에 맞게 자동으로 조정해요.",
+          steps: [
+            "너비를 조정할 열 문자를 클릭해 선택해요 (여러 열 선택 가능)",
+            "Alt → H → O → I 순서로 눌러요",
+            "내용에 딱 맞게 자동 조정돼요",
+          ],
+          example:
+            "여러 열을 한 번에 선택하고 실행하면 각 열의 내용에 맞게 너비가 자동으로 맞춰져요.",
+        },
+        {
+          cat: "서식",
+          desc: "행 높이 자동 맞춤",
+          tip: "",
+          keys: [["Alt"], ["H"], ["O"], ["A"]],
+          jobs: ["전체", "일반", "인사"],
+          when: "줄바꿈된 셀의 내용이 잘려 보일 때 행 높이를 자동으로 맞춰요.",
+          steps: [
+            "높이를 조정할 행을 선택해요",
+            "Alt → H → O → A 순서로 눌러요",
+          ],
+          example:
+            "셀 내용이 2~3줄인데 잘려 보일 때 행 높이 자동 맞춤으로 해결해요.",
+        },
+        {
+          cat: "서식",
+          desc: "테두리 추가",
+          tip: "",
+          keys: [["Ctrl"], ["Shift"], ["7"]],
+          jobs: ["전체", "일반", "회계", "인사"],
+          when: "선택한 셀 범위에 테두리를 빠르게 추가할 때 써요.",
+          steps: [
+            "테두리를 줄 범위를 선택해요",
+            "Ctrl + Shift + 7을 눌러요",
+            "외곽 테두리가 추가돼요",
+          ],
+          example:
+            "보고서 표에 테두리를 추가할 때 범위 선택 후 Ctrl+Shift+7로 빠르게 처리해요.",
+        },
+        {
+          cat: "서식",
+          desc: "테두리 제거",
+          tip: "",
+          keys: [["Ctrl"], ["Shift"], ["-"]],
+          jobs: ["전체", "일반"],
+          when: "테두리를 모두 제거하고 싶을 때 써요.",
+          steps: [
+            "테두리를 지울 범위를 선택해요",
+            "Ctrl + Shift + - (빼기)를 눌러요",
+          ],
+          example:
+            "표 전체 선택 후 Ctrl+Shift+- 누르면 모든 테두리가 사라져요.",
+        },
+        {
+          cat: "서식",
+          desc: "숫자 천단위 쉼표",
+          tip: "1000 → 1,000",
+          keys: [["Ctrl"], ["Shift"], ["1"]],
+          jobs: ["전체", "회계", "데이터분석"],
+          when: "금액이나 수량에 천단위 구분 쉼표를 빠르게 추가할 때 써요.",
+          steps: [
+            "숫자 셀을 선택해요",
+            "Ctrl + Shift + 1을 눌러요",
+            "1,000,000 형식으로 바뀌어요",
+          ],
+          example:
+            "매출 데이터에 Ctrl+Shift+1 적용하면 1000000 → 1,000,000으로 보기 좋게 바뀌어요.",
+        },
+        {
+          cat: "서식",
+          desc: "퍼센트 형식",
+          tip: "0.15 → 15%",
+          keys: [["Ctrl"], ["Shift"], ["5"]],
+          jobs: ["전체", "회계", "데이터분석", "기획"],
+          when: "비율 데이터를 % 형식으로 표시할 때 써요.",
+          steps: [
+            "비율이 있는 셀을 선택해요 (0~1 사이 소수)",
+            "Ctrl + Shift + 5를 눌러요",
+            "% 형식으로 표시돼요",
+          ],
+          example: "0.253 → Ctrl+Shift+5 → 25% 로 표시돼요.",
+        },
+        {
+          cat: "서식",
+          desc: "날짜 형식",
+          tip: "숫자를 날짜로",
+          keys: [["Ctrl"], ["Shift"], ["3"]],
+          jobs: ["전체", "인사", "회계"],
+          when: "숫자로 입력된 날짜를 날짜 형식으로 빠르게 변환할 때 써요.",
+          steps: [
+            "날짜 셀을 선택해요",
+            "Ctrl + Shift + 3을 눌러요",
+            "dd-mmm-yy 형식으로 표시돼요",
+          ],
+          example:
+            "45000 같은 날짜 시리얼 번호를 Ctrl+Shift+3 누르면 날짜로 변환돼요.",
+        },
+        {
+          cat: "서식",
+          desc: "통화 형식",
+          tip: "₩ 표시 추가",
+          keys: [["Ctrl"], ["Shift"], ["4"]],
+          jobs: ["전체", "회계"],
+          when: "금액 셀에 통화 기호를 빠르게 붙일 때 써요.",
+          steps: [
+            "금액 셀을 선택해요",
+            "Ctrl + Shift + 4를 눌러요",
+            "통화 형식으로 표시돼요",
+          ],
+          example: "1000000 → Ctrl+Shift+4 → ₩1,000,000 으로 표시돼요.",
+        },
+        {
+          cat: "서식",
+          desc: "열 숨기기",
+          tip: "",
+          keys: [["Ctrl"], ["0"]],
+          jobs: ["전체", "회계", "인사"],
+          when: "보고서 출력 시 내부용 데이터 열을 숨길 때 써요. 데이터는 유지되고 화면에서만 안 보여요.",
+          steps: [
+            "숨길 열의 열 문자를 클릭해 선택해요",
+            "Ctrl + 0을 눌러요",
+            "열이 숨겨져요",
+          ],
+          example:
+            "내부 계산용 D열을 숨긴 채 인쇄하고 싶을 때 D열 선택 → Ctrl+0.",
+        },
+        {
+          cat: "서식",
+          desc: "행 숨기기",
+          tip: "",
+          keys: [["Ctrl"], ["9"]],
+          jobs: ["전체", "회계", "인사"],
+          when: "특정 행을 임시로 숨길 때 써요. 합계 행 위의 소계 행 등을 숨길 때 유용해요.",
+          steps: ["숨길 행 번호를 클릭해 선택해요", "Ctrl + 9를 눌러요"],
+          example: "상세 항목 행을 숨기고 합계만 보이게 할 때 사용해요.",
+        },
+        {
+          cat: "서식",
+          desc: "열 숨기기 취소",
+          tip: "",
+          keys: [["Ctrl"], ["Shift"], ["0"]],
+          jobs: ["전체", "회계", "인사"],
+          when: "숨긴 열을 다시 표시할 때 써요.",
+          steps: [
+            "숨겨진 열 양쪽 열을 드래그로 선택해요",
+            "Ctrl + Shift + 0을 눌러요",
+            "숨긴 열이 다시 나타나요",
+          ],
+          example:
+            "C열과 E열 사이에 숨겨진 D열을 복구하려면 C~E열 선택 후 Ctrl+Shift+0.",
+        },
+        {
+          cat: "서식",
+          desc: "행 숨기기 취소",
+          tip: "",
+          keys: [["Ctrl"], ["Shift"], ["9"]],
+          jobs: ["전체", "회계", "인사"],
+          when: "숨긴 행을 다시 표시할 때 써요.",
+          steps: [
+            "숨겨진 행 위아래 행을 드래그로 선택해요",
+            "Ctrl + Shift + 9를 눌러요",
+          ],
+          example:
+            "5행이 숨겨져 있으면 4행~6행 선택 후 Ctrl+Shift+9로 복구해요.",
+        },
+        // 수식
+        {
+          cat: "수식",
+          desc: "합계 자동 입력",
+          tip: "범위 자동 감지",
+          keys: [["Alt"], ["="]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "선택한 범위 바로 아래나 오른쪽에 합계를 자동으로 넣을 때 써요. 범위도 자동으로 잡아줘요.",
+          steps: [
+            "합계를 넣을 셀을 클릭해요 (데이터 바로 아래 또는 오른쪽)",
+            "Alt + = 를 눌러요",
+            "자동으로 SUM 수식이 입력돼요",
+            "Enter로 확정",
+          ],
+          example:
+            "A1:A10에 숫자가 있을 때 A11 클릭 → Alt+= → Enter 하면 합계가 바로 입력돼요.",
+        },
+        {
+          cat: "수식",
+          desc: "절대/상대 참조 전환",
+          tip: "$A$1 ↔ A1 전환",
+          keys: [["F4"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "수식 복사 시 특정 셀을 고정하고 싶을 때 써요. F4를 반복해서 눌러 참조 방식을 순환해요.",
+          steps: [
+            "수식 입력 중 셀 주소를 입력해요 (예: A1)",
+            "F4를 눌러요",
+            "$A$1 → A$1 → $A1 → A1 순으로 바뀌어요",
+          ],
+          example:
+            "할인율이 B1에 있을 때 수식에서 B1 입력 후 F4 누르면 $B$1로 고정돼서 복사해도 B1을 참조해요.",
+        },
+        {
+          cat: "수식",
+          desc: "함수 마법사",
+          tip: "함수 검색 및 입력 도우미",
+          keys: [["Shift"], ["F3"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "함수 이름이나 인수가 헷갈릴 때 도우미를 열어 직접 선택하고 입력할 수 있어요.",
+          steps: [
+            "수식을 입력할 셀을 클릭해요",
+            "Shift + F3을 눌러요",
+            "함수 검색 창이 열려요",
+            "함수 선택 후 인수 입력",
+          ],
+          example:
+            "VLOOKUP 쓰고 싶은데 인수가 헷갈리면 Shift+F3 → VLOOKUP 검색 → 안내에 따라 입력.",
+        },
+        {
+          cat: "수식",
+          desc: "이름 정의",
+          tip: "범위에 이름 붙이기",
+          keys: [["Ctrl"], ["F3"]],
+          jobs: ["전체", "회계", "데이터분석"],
+          when: "자주 쓰는 범위에 이름을 붙여서 수식을 읽기 쉽게 만들 때 써요.",
+          steps: [
+            "이름 붙일 범위를 선택해요",
+            "Ctrl + F3을 눌러요",
+            "새 이름 버튼 클릭 후 이름 입력",
+          ],
+          example:
+            'B2:B100을 "매출액"으로 이름 정의하면 =SUM(B2:B100) 대신 =SUM(매출액) 으로 쓸 수 있어요.',
+        },
+        {
+          cat: "수식",
+          desc: "수식 표시 토글",
+          tip: "수식/결과값 전환",
+          keys: [["Ctrl"], ["`"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+          when: "수식이 맞게 입력됐는지 확인하거나 오류를 찾을 때 써요.",
+          steps: [
+            "Ctrl + ` (물결표 왼쪽 키)를 눌러요",
+            "수식이 그대로 보여요",
+            "다시 누르면 결과값으로 돌아와요",
+          ],
+          example:
+            "VLOOKUP 수식이 제대로 들어갔는지 Ctrl+` 눌러서 확인할 수 있어요.",
+        },
+        {
+          cat: "수식",
+          desc: "배열 수식 입력",
+          tip: "Ctrl+Shift+Enter",
+          keys: [["Ctrl"], ["Shift"], ["Enter"]],
+          jobs: ["전체", "데이터분석"],
+          when: "여러 조건을 동시에 처리하는 복잡한 수식을 입력할 때 써요.",
+          steps: [
+            "수식을 입력해요",
+            "Enter 대신 Ctrl + Shift + Enter를 눌러요",
+            "{ }로 감싸진 배열 수식이 입력돼요",
+          ],
+          example:
+            "조건에 맞는 값들의 합을 구하는 복잡한 수식에서 Ctrl+Shift+Enter로 배열 수식으로 처리해요.",
+        },
+        {
+          cat: "수식",
+          desc: "수식 검사",
+          tip: "오류 셀 추적",
+          keys: [["Ctrl"], ["["]],
+          jobs: ["전체", "회계", "데이터분석"],
+          when: "수식이 참조하는 셀들이 어딘지 확인하고 싶을 때 써요.",
+          steps: [
+            "확인할 수식 셀을 클릭해요",
+            "Ctrl + [ 를 눌러요",
+            "수식이 참조하는 셀로 이동해요",
+          ],
+          example: "=SUM(A1:A10) 셀에서 Ctrl+[ 누르면 A1:A10 범위가 선택돼요.",
+        },
+        {
+          cat: "수식",
+          desc: "계산 강제 실행",
+          tip: "자동계산 꺼져 있을 때",
+          keys: [["F9"]],
+          jobs: ["전체", "회계", "데이터분석"],
+          when: "자동 계산이 꺼진 대용량 파일에서 수식을 수동으로 계산할 때 써요.",
+          steps: ["F9를 눌러요", "전체 수식이 다시 계산돼요"],
+          example:
+            "무거운 파일에서 자동계산을 끄고 작업한 후 F9로 한 번에 계산 실행해요.",
+        },
+        // 시트·파일
+        {
+          cat: "시트·파일",
+          desc: "저장",
+          tip: "",
+          keys: [["Ctrl"], ["S"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "작업 중 수시로 저장해서 데이터 손실을 막을 때 써요.",
+          steps: ["Ctrl + S를 눌러요", "파일이 저장돼요"],
+          example:
+            "작업 중 5분마다 습관적으로 Ctrl+S 눌러주면 갑작스러운 종료에도 데이터를 잃지 않아요.",
+        },
+        {
+          cat: "시트·파일",
+          desc: "다른 이름으로 저장",
+          tip: "",
+          keys: [["F12"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+          when: "파일 이름을 바꾸거나 다른 형식(CSV, PDF 등)으로 저장할 때 써요.",
+          steps: [
+            "F12를 눌러요",
+            "다른 이름으로 저장 창이 열려요",
+            "파일명, 형식, 위치 선택 후 저장",
+          ],
+          example:
+            '"2025_예산안.xlsx"를 "2025_예산안_최종.xlsx"로 다른 이름으로 저장할 때 F12.',
+        },
+        {
+          cat: "시트·파일",
+          desc: "새 파일",
+          tip: "",
+          keys: [["Ctrl"], ["N"]],
+          jobs: ["전체", "일반"],
+          when: "새로운 빈 엑셀 파일을 열 때 써요.",
+          steps: ["Ctrl + N을 눌러요", "새 빈 파일이 열려요"],
+          example: "새 파일에서 시작하고 싶을 때 Ctrl+N.",
+        },
+        {
+          cat: "시트·파일",
+          desc: "파일 열기",
+          tip: "",
+          keys: [["Ctrl"], ["O"]],
+          jobs: ["전체", "일반"],
+          when: "저장된 파일을 불러올 때 써요.",
+          steps: [
+            "Ctrl + O를 눌러요",
+            "열기 창이 나타나요",
+            "파일 선택 후 열기",
+          ],
+          example: "최근 파일 목록에서 빠르게 열 수도 있어요.",
+        },
+        {
+          cat: "시트·파일",
+          desc: "인쇄",
+          tip: "",
+          keys: [["Ctrl"], ["P"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
+          when: "작업한 파일을 인쇄하거나 PDF로 내보낼 때 써요.",
+          steps: [
+            "Ctrl + P를 눌러요",
+            "인쇄 설정 화면이 열려요",
+            "인쇄 범위, 매수 등 설정 후 인쇄",
+          ],
+          example: "보고서 인쇄 전 Ctrl+P로 미리보기 확인 후 인쇄해요.",
+        },
+        {
+          cat: "시트·파일",
+          desc: "새 시트 삽입",
+          tip: "",
+          keys: [["Alt"], ["Shift"], ["F1"]],
+          jobs: ["전체", "일반", "회계", "인사"],
+          when: "새 시트를 추가할 때 써요. 하단 + 버튼과 동일해요.",
+          steps: [
+            "Alt + Shift + F1을 눌러요",
+            "현재 시트 앞에 새 시트가 생겨요",
+          ],
+          example: "월별 시트를 만들 때 Alt+Shift+F1로 빠르게 추가해요.",
+        },
+        {
+          cat: "시트·파일",
+          desc: "시트 이름 변경",
+          tip: "",
+          keys: [["Alt"], ["H"], ["O"], ["R"]],
+          jobs: ["전체", "일반", "회계", "인사"],
+          when: "시트 탭 이름을 바꿀 때 써요. 탭 더블클릭과 동일한 효과예요.",
+          steps: [
+            "이름을 바꿀 시트를 선택해요",
+            "Alt → H → O → R 순으로 눌러요",
+            "이름 입력 후 Enter",
+          ],
+          example: '"Sheet1"을 "1월" 로 바꿀 때 사용해요.',
+        },
+        {
+          cat: "시트·파일",
+          desc: "창 닫기",
+          tip: "",
+          keys: [["Ctrl"], ["W"]],
+          jobs: ["전체", "일반"],
+          when: "현재 엑셀 파일만 닫고 프로그램은 유지할 때 써요.",
+          steps: ["Ctrl + W를 눌러요", "저장 여부 묻고 파일이 닫혀요"],
+          example: "여러 파일 중 하나만 닫을 때 Ctrl+W.",
+        },
+        {
+          cat: "시트·파일",
+          desc: "인쇄 미리보기",
+          tip: "",
+          keys: [["Ctrl"], ["F2"]],
+          jobs: ["전체", "회계", "인사", "기획"],
+          when: "인쇄 전 레이아웃을 확인할 때 써요.",
+          steps: ["Ctrl + F2를 눌러요", "인쇄 미리보기 화면으로 이동해요"],
+          example: "인쇄 시 페이지가 잘리는지 미리 확인할 때 Ctrl+F2.",
+        },
+        // 데이터
+        {
+          cat: "데이터",
+          desc: "필터 켜기/끄기",
+          tip: "자동 필터 토글",
+          keys: [["Ctrl"], ["Shift"], ["L"]],
+          jobs: ["전체", "데이터분석", "회계", "인사"],
+          when: "수백~수천 행 데이터에서 특정 조건에 맞는 데이터만 보고 싶을 때 써요. 예를 들어 특정 부서, 날짜, 금액 범위만 필터링.",
+          steps: [
+            "데이터 표 안 아무 셀이나 클릭해요",
+            "Ctrl + Shift + L을 눌러요",
+            "열 헤더에 ▼ 버튼이 생겨요",
+            "▼ 클릭해서 원하는 조건 선택",
+            "다시 Ctrl+Shift+L 누르면 필터 해제",
+          ],
+          example:
+            '직원 명단에서 "영업팀"만 보고 싶을 때 부서 열 ▼ → 영업팀 체크 → 확인.',
+        },
+        {
+          cat: "데이터",
+          desc: "필터 목록 열기",
+          tip: "해당 열 필터 드롭다운",
+          keys: [["Alt"], ["↓"]],
+          jobs: ["전체", "데이터분석", "회계", "인사"],
+          when: "필터가 켜진 상태에서 특정 열의 필터 드롭다운을 키보드로 열 때 써요.",
+          steps: [
+            "필터가 켜진 상태에서 헤더 셀을 클릭해요",
+            "Alt + ↓를 눌러요",
+            "필터 목록이 열려요",
+          ],
+          example: "날짜 필터를 키보드로 열고 싶을 때 날짜 헤더 셀 → Alt+↓.",
+        },
+        {
+          cat: "데이터",
+          desc: "피벗 테이블 새로고침",
+          tip: "",
+          keys: [["Alt"], ["F5"]],
+          jobs: ["전체", "데이터분석", "회계"],
+          when: "원본 데이터가 변경됐을 때 피벗 테이블을 최신 데이터로 업데이트할 때 써요.",
+          steps: [
+            "피벗 테이블 안 아무 셀이나 클릭해요",
+            "Alt + F5를 눌러요",
+            "피벗이 최신 데이터로 갱신돼요",
+          ],
+          example:
+            "원본 데이터에 새 행을 추가한 후 Alt+F5 누르면 피벗 테이블에 반영돼요.",
+        },
+        {
+          cat: "데이터",
+          desc: "중복 제거",
+          tip: "메뉴 열기",
+          keys: [["Alt"], ["A"], ["M"]],
+          jobs: ["전체", "데이터분석", "인사"],
+          when: "데이터에서 중복된 행을 제거할 때 써요. 이름, 코드, ID 등 중복값 정리에 유용해요.",
+          steps: [
+            "데이터 표 안 아무 셀이나 클릭해요",
+            "Alt → A → M 순서로 눌러요",
+            "중복 제거 대화상자에서 기준 열 선택",
+            "확인 클릭",
+          ],
+          example:
+            "고객 명단에서 같은 이름이 중복 입력됐을 때 Alt+A+M으로 한 번에 정리해요.",
+        },
+        {
+          cat: "데이터",
+          desc: "텍스트 나누기",
+          tip: "구분자로 열 분리",
+          keys: [["Alt"], ["A"], ["E"]],
+          jobs: ["전체", "데이터분석"],
+          when: '"홍길동,영업팀,부장" 같이 하나의 셀에 쉼표나 탭으로 구분된 데이터를 여러 열로 나눌 때 써요.',
+          steps: [
+            "나눌 셀 또는 열을 선택해요",
+            "Alt → A → E 순서로 눌러요",
+            "구분자 선택 (쉼표, 탭 등)",
+            "마침 클릭",
+          ],
+          example:
+            "CSV 데이터를 붙여넣었을 때 한 셀에 몰려있으면 Alt+A+E로 열로 분리해요.",
+        },
+        {
+          cat: "데이터",
+          desc: "정렬 오름차순",
+          tip: "",
+          keys: [["Alt"], ["A"], ["S"], ["A"]],
+          jobs: ["전체", "데이터분석", "인사", "회계"],
+          when: "데이터를 가나다순, 숫자 작은 순으로 정렬할 때 써요.",
+          steps: [
+            "정렬 기준이 될 열의 아무 셀이나 클릭해요",
+            "Alt → A → S → A 순서로 눌러요",
+          ],
+          example: "이름 열 클릭 후 Alt+A+S+A 누르면 가나다순으로 정렬돼요.",
+        },
+        {
+          cat: "데이터",
+          desc: "정렬 내림차순",
+          tip: "",
+          keys: [["Alt"], ["A"], ["S"], ["D"]],
+          jobs: ["전체", "데이터분석", "인사", "회계"],
+          when: "데이터를 역순(큰 것부터, 하나다순 역순)으로 정렬할 때 써요.",
+          steps: [
+            "정렬 기준이 될 열의 아무 셀이나 클릭해요",
+            "Alt → A → S → D 순서로 눌러요",
+          ],
+          example:
+            "매출 열 클릭 후 Alt+A+S+D 누르면 매출이 높은 순으로 정렬돼요.",
+        },
+      ];
+
+      const JOBS = [
+        { id: "전체", label: "전체", desc: "모든 단축키 목록이에요." },
+        {
+          id: "일반",
+          label: "일반 업무",
+          desc: "문서 작성, 데이터 입력 등 일상 업무에서 자주 쓰는 단축키예요.",
+        },
+        {
+          id: "회계",
+          label: "회계·재무",
+          desc: "숫자 서식, 합계, 통화 표시 등 회계 업무에 유용한 단축키예요.",
+        },
+        {
+          id: "인사",
+          label: "인사·총무",
+          desc: "명단 관리, 날짜 입력, 필터 등 인사 업무에 자주 쓰는 단축키예요.",
+        },
+        {
+          id: "데이터분석",
+          label: "데이터 분석",
+          desc: "필터, 정렬, 피벗, 수식 등 데이터 분석에 필수 단축키예요.",
+        },
+        {
+          id: "기획",
+          label: "기획·보고서",
+          desc: "서식, 인쇄, 문서 정리 등 보고서 작성에 유용한 단축키예요.",
+        },
+      ];
+
+      let activeJob = "전체",
+        activeCat = "전체",
+        query = "";
+
+      function getFiltered() {
+        const q = query.trim().toLowerCase();
+        return ALL.filter((s) => {
+          const jobOk = s.jobs.includes(activeJob);
+          const catOk = activeCat === "전체" || s.cat === activeCat;
+          const qOk =
+            !q ||
+            s.desc.toLowerCase().includes(q) ||
+            s.tip.toLowerCase().includes(q) ||
+            s.keys.flat().join("").toLowerCase().includes(q) ||
+            s.cat.toLowerCase().includes(q);
+          return jobOk && catOk && qOk;
+        });
+      }
+
+      function renderKeys(keys) {
+        return keys
+          .map(
+            (k, i) =>
+              `${i > 0 ? '<span class="plus">+</span>' : ""}<span class="key">${k[0]}</span>`,
+          )
+          .join("");
+      }
+
+      function renderJobTabs() {
+        const el = document.getElementById("job-tabs");
+        el.innerHTML = JOBS.map(
+          (j) =>
+            `<button class="job-tab${j.id === activeJob ? " active" : ""}" data-job="${j.id}">${j.label}</button>`,
+        ).join("");
+        el.querySelectorAll(".job-tab").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            activeJob = btn.dataset.job;
+            activeCat = "전체";
+            renderJobTabs();
+            renderCats();
+            render();
+          });
+        });
+        document.getElementById("job-desc").textContent =
+          JOBS.find((j) => j.id === activeJob)?.desc || "";
+      }
+
+      function renderCats() {
+        const cats = [
+          "전체",
+          ...new Set(
+            ALL.filter((s) => s.jobs.includes(activeJob)).map((s) => s.cat),
+          ),
+        ];
+        const el = document.getElementById("cats");
+        el.innerHTML = cats
+          .map(
+            (c) =>
+              `<button class="cat-btn${c === activeCat ? " active" : ""}" data-cat="${c}">${c}</button>`,
+          )
+          .join("");
+        el.querySelectorAll(".cat-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            activeCat = btn.dataset.cat;
+            renderCats();
+            render();
+          });
+        });
+      }
+
+      function render() {
+        const data = getFiltered();
+        document.getElementById("count").textContent = `총 ${data.length}개`;
+        const grouped = {};
+        data.forEach((s) => {
+          if (!grouped[s.cat]) grouped[s.cat] = [];
+          grouped[s.cat].push(s);
+        });
+        const list = document.getElementById("list");
+        if (!data.length) {
+          list.innerHTML = `<div class="empty"><p>검색 결과 없음</p><p>"${query}"에 맞는 단축키를 찾지 못했어요. AI 검색을 써보세요!</p></div>`;
+          return;
+        }
+        list.innerHTML = Object.entries(grouped)
+          .map(
+            ([cat, items]) => `
+    <div class="section">
+      <div class="section-label">${cat}</div>
+      <div class="grid">
+        ${items
+          .map(
+            (s, i) => `
+          <div class="card" data-idx="${ALL.indexOf(s)}">
+            <div class="card-left">
+              <div class="card-desc">${s.desc}</div>
+              ${s.tip ? `<div class="card-tip">${s.tip}</div>` : ""}
+            </div>
+            <div class="keys">${renderKeys(s.keys)}</div>
+          </div>
+        `,
+          )
+          .join("")}
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+
+        document.querySelectorAll(".card").forEach((card) => {
+          card.addEventListener("click", () =>
+            openModal(parseInt(card.dataset.idx)),
+          );
+        });
+      }
+
+      // 모달
+      const overlay = document.getElementById("modal-overlay");
+      function openModal(idx) {
+        const s = ALL[idx];
+        document.getElementById("modal-title").textContent = s.desc;
+        document.getElementById("modal-keys").innerHTML = renderKeys(s.keys);
+        document.getElementById("modal-body").innerHTML = `
+    <div>
+      <div class="modal-section-title">언제 써요?</div>
+      <div class="modal-section-content">${s.when}</div>
+    </div>
+    <div>
+      <div class="modal-section-title">사용 순서</div>
+      <ol class="modal-steps">
+        ${s.steps.map((st) => `<li><span class="step-num">${s.steps.indexOf(st) + 1}</span><span>${st}</span></li>`).join("")}
+      </ol>
+    </div>
+    <div class="modal-example">💡 ${s.example}</div>
+  `;
+        overlay.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal() {
+        overlay.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document
+        .getElementById("modal-close")
+        .addEventListener("click", closeModal);
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      document.getElementById("search").addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      // AI 패널
+      const aiPanel = document.getElementById("ai-panel");
+      const aiAnswer = document.getElementById("ai-answer");
+      const aiQuery = document.getElementById("ai-query");
+      const aiAsk = document.getElementById("ai-ask");
+      document.getElementById("ai-toggle-btn").addEventListener("click", () => {
+        aiPanel.classList.toggle("open");
+        if (aiPanel.classList.contains("open")) aiQuery.focus();
+      });
+      document.getElementById("ai-close").addEventListener("click", () => {
+        aiPanel.classList.remove("open");
+      });
+      async function askAI() {
+        const q = aiQuery.value.trim();
+        if (!q) return;
+        aiAsk.disabled = true;
+        aiAnswer.innerHTML =
+          '<div class="typing-dots"><span>•</span><span>•</span><span>•</span></div>';
+        try {
+          const GROQ_KEY =
+            "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";
+          const res = await fetch(
+            "https://api.groq.com/openai/v1/chat/completions",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${GROQ_KEY}`,
+              },
+              body: JSON.stringify({
+                model: "llama-3.3-70b-versatile",
+                messages: [
+                  {
+                    role: "system",
+                    content:
+                      "당신은 엑셀 단축키 전문가입니다. 사용자가 하고 싶은 작업을 말하면 관련 엑셀 단축키를 알려주세요.\n- 핵심 단축키를 **Ctrl + C** 형식으로 강조\n- 사용법을 1~2줄로 간결하게 설명\n- 연관 단축키가 있으면 추가 소개\n- 친근하고 간결한 한국어로 답변\n- Windows 기준으로 답변",
+                  },
+                  { role: "user", content: q },
+                ],
+                max_tokens: 500,
+              }),
+            },
+          );
+          const data = await res.json();
+          const text =
+            data.choices?.[0]?.message?.content || "답변을 가져오지 못했어요.";
+          aiAnswer.innerHTML = text
+            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+            .replace(/\n/g, "<br>");
+        } catch (e) {
+          aiAnswer.textContent =
+            "오류가 발생했어요. 잠시 후 다시 시도해주세요.";
+        }
+        aiAsk.disabled = false;
+      }
+      aiAsk.addEventListener("click", askAI);
+      aiQuery.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") askAI();
+      });
+
+      renderJobTabs();
+      renderCats();
+      render();
+    </script>
+  </body>
+</html>
