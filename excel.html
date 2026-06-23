@@ -505,11 +505,57 @@
 
       @media (max-width: 640px) {
         header { padding: 0 1rem; position: sticky; }
-        main { padding: 1.25rem 1rem; }
+        main { padding: 1rem; }
         .logo span { display: none; }
-        .grid { grid-template-columns: 1fr; }
+        .grid { grid-template-columns: 1fr; gap: 8px; }
         .header-btns { display: none; }
         .hamburger { display: flex; }
+
+        /* 검색창 */
+        #search { font-size: 15px; padding: 10px 12px 10px 36px; }
+
+        /* 업무 탭 가로 스크롤 */
+        .job-tabs {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          padding-bottom: 1rem;
+          margin-bottom: 1rem;
+          gap: 6px;
+        }
+        .job-tabs::-webkit-scrollbar { display: none; }
+        .job-tab { flex-shrink: 0; padding: 6px 14px; font-size: 13px; }
+
+        /* 카테고리 버튼 가로 스크롤 */
+        .cats {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          margin-bottom: 1rem;
+          gap: 6px;
+        }
+        .cats::-webkit-scrollbar { display: none; }
+        .cat-btn { flex-shrink: 0; }
+
+        /* 카드 */
+        .card { padding: 12px 14px; border-radius: var(--radius-md); }
+        .card-desc { font-size: 14px; }
+        .key { font-size: 11px; padding: 3px 7px; }
+
+        /* 섹션 */
+        .section { margin-bottom: 1.5rem; }
+        .job-desc { font-size: 12px; margin-bottom: 1rem; }
+        .result-count { margin-bottom: 0.75rem; }
+
+        /* 모달 */
+        .modal { border-radius: var(--radius-md) var(--radius-md) 0 0; max-height: 85vh; }
+        .modal-overlay { align-items: flex-end; padding: 0; }
+        .tool-modal { border-radius: var(--radius-md) var(--radius-md) 0 0; max-height: 90vh; }
+        .tool-overlay { align-items: flex-end; padding: 0; }
+
+        footer { padding: 1.5rem 1rem; font-size: 12px; }
       }
     </style>
   </head>
