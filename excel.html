@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>엑셀 단축키 모음</title>
+    <title>엑셀 단축키 모음 | 업무별 엑셀 단축키 완벽 정리</title>
+    <meta
+      name="description"
+      content="엑셀 단축키를 업무별로 정리했어요. 회계, 인사, 데이터분석, 일반 업무에서 자주 쓰는 단축키를 한눈에 확인하고 AI로 검색해보세요." />
+    <meta
+      name="keywords"
+      content="엑셀 단축키, excel 단축키, 엑셀 단축키 모음, 엑셀 빠른 키, 엑셀 팁, 회계 엑셀, 인사 엑셀" />
+    <meta name="author" content="Excel Shortcut" />
+    <meta property="og:title" content="엑셀 단축키 모음 | 업무별 완벽 정리" />
+    <meta
+      property="og:description"
+      content="회계, 인사, 데이터분석 등 업무별 엑셀 단축키를 한눈에. AI 검색으로 원하는 단축키를 바로 찾아보세요." />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://limseewon.github.io/excel/" />
     <style>
       :root {
         --bg: #f7f7f5;
@@ -22,13 +36,11 @@
         --radius-md: 10px;
         --radius-lg: 14px;
       }
-
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
       body {
         font-family:
           -apple-system, "Pretendard", "Apple SD Gothic Neo", sans-serif;
@@ -47,16 +59,14 @@
         top: 0;
         z-index: 100;
       }
-
       .header-inner {
         max-width: 1100px;
         margin: 0 auto;
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
         height: 60px;
       }
-
       .logo {
         display: flex;
         align-items: center;
@@ -67,18 +77,15 @@
         white-space: nowrap;
         text-decoration: none;
       }
-
       .logo svg {
         width: 22px;
         height: 22px;
       }
-
       .search-wrap {
         flex: 1;
-        max-width: 480px;
+        max-width: 440px;
         position: relative;
       }
-
       .search-wrap svg {
         position: absolute;
         left: 12px;
@@ -89,7 +96,6 @@
         color: var(--text-hint);
         pointer-events: none;
       }
-
       #search {
         width: 100%;
         padding: 9px 12px 9px 36px;
@@ -102,7 +108,6 @@
         transition: border-color 0.15s;
         font-family: inherit;
       }
-
       #search:focus {
         border-color: var(--accent);
         background: var(--surface);
@@ -110,7 +115,6 @@
       #search::placeholder {
         color: var(--text-hint);
       }
-
       .ai-btn {
         display: flex;
         align-items: center;
@@ -127,7 +131,6 @@
         font-family: inherit;
         transition: opacity 0.15s;
       }
-
       .ai-btn:hover {
         opacity: 0.88;
       }
@@ -142,15 +145,17 @@
         padding: 2rem;
       }
 
-      .cats {
+      /* 업무 탭 */
+      .job-tabs {
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--border);
       }
-
-      .cat-btn {
-        padding: 6px 16px;
+      .job-tab {
+        padding: 7px 18px;
         border-radius: 20px;
         border: 1px solid var(--border);
         background: var(--surface);
@@ -161,21 +166,57 @@
         transition: all 0.15s;
         font-family: inherit;
       }
+      .job-tab:hover {
+        border-color: var(--border-hover);
+        color: var(--text);
+      }
+      .job-tab.active {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .job-desc {
+        font-size: 13px;
+        color: var(--text-hint);
+        margin-bottom: 1.25rem;
+      }
 
+      /* 카테고리 필터 */
+      .cats {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+      .cat-btn {
+        padding: 5px 14px;
+        border-radius: 20px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text-muted);
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.15s;
+        font-family: inherit;
+      }
       .cat-btn:hover {
         border-color: var(--border-hover);
         color: var(--text);
       }
       .cat-btn.active {
-        background: var(--accent);
-        color: #fff;
+        background: var(--accent-light);
+        color: var(--accent-text);
         border-color: var(--accent);
       }
 
+      .result-count {
+        font-size: 13px;
+        color: var(--text-hint);
+        margin-bottom: 1rem;
+      }
       .section {
         margin-bottom: 2rem;
       }
-
       .section-label {
         font-size: 12px;
         font-weight: 600;
@@ -184,13 +225,11 @@
         color: var(--text-hint);
         margin-bottom: 0.75rem;
       }
-
       .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
         gap: 10px;
       }
-
       .card {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -200,40 +239,33 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        transition:
-          border-color 0.15s,
-          box-shadow 0.15s;
+        transition: border-color 0.15s;
       }
-
       .card:hover {
         border-color: var(--border-hover);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
-
       .card-left {
         flex: 1;
         min-width: 0;
       }
-
       .card-desc {
         font-size: 14px;
         font-weight: 500;
         color: var(--text);
-        margin-bottom: 4px;
+        margin-bottom: 3px;
       }
-
       .card-tip {
         font-size: 12px;
         color: var(--text-hint);
       }
-
       .keys {
         display: flex;
         align-items: center;
         gap: 4px;
         flex-shrink: 0;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
-
       .key {
         display: inline-flex;
         align-items: center;
@@ -247,39 +279,20 @@
         color: var(--text);
         white-space: nowrap;
       }
-
       .plus {
         font-size: 11px;
         color: var(--text-hint);
-        font-weight: 500;
       }
-
-      .badge {
-        display: inline-block;
-        font-size: 11px;
-        padding: 2px 8px;
-        border-radius: 10px;
-        font-weight: 500;
-        margin-left: 6px;
-      }
-
       .empty {
         text-align: center;
         padding: 4rem 2rem;
         color: var(--text-hint);
         font-size: 14px;
       }
-
       .empty p:first-child {
         font-size: 18px;
         margin-bottom: 0.5rem;
         color: var(--text-muted);
-      }
-
-      .result-count {
-        font-size: 13px;
-        color: var(--text-hint);
-        margin-bottom: 1.25rem;
       }
 
       /* AI 패널 */
@@ -291,11 +304,9 @@
         overflow: hidden;
         display: none;
       }
-
       .ai-panel.open {
         display: block;
       }
-
       .ai-panel-header {
         display: flex;
         align-items: center;
@@ -304,32 +315,28 @@
         border-bottom: 1px solid var(--border);
         background: var(--accent-light);
       }
-
       .ai-panel-header span {
         font-size: 14px;
         font-weight: 500;
         color: var(--accent-text);
         flex: 1;
       }
-
       .ai-close {
         background: none;
         border: none;
         cursor: pointer;
         color: var(--text-muted);
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1;
         padding: 0;
         font-family: inherit;
       }
-
       .ai-input-row {
         display: flex;
         gap: 8px;
         padding: 14px 16px;
         border-bottom: 1px solid var(--border);
       }
-
       #ai-query {
         flex: 1;
         padding: 9px 12px;
@@ -341,12 +348,10 @@
         outline: none;
         background: var(--bg);
       }
-
       #ai-query:focus {
         border-color: var(--accent);
         background: var(--surface);
       }
-
       .ai-ask-btn {
         padding: 9px 16px;
         background: var(--accent);
@@ -360,7 +365,6 @@
         white-space: nowrap;
         transition: opacity 0.15s;
       }
-
       .ai-ask-btn:hover {
         opacity: 0.88;
       }
@@ -368,26 +372,18 @@
         opacity: 0.5;
         cursor: not-allowed;
       }
-
       .ai-answer {
         padding: 16px;
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.8;
         color: var(--text);
         min-height: 60px;
         white-space: pre-wrap;
       }
-
-      .ai-answer.loading {
-        color: var(--text-hint);
-        font-style: italic;
-      }
-
       .typing-dots span {
         display: inline-block;
         animation: blink 1.2s infinite;
-        font-size: 18px;
-        line-height: 1;
+        font-size: 20px;
       }
       .typing-dots span:nth-child(2) {
         animation-delay: 0.2s;
@@ -406,15 +402,21 @@
         }
       }
 
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 13px;
+        color: var(--text-hint);
+        border-top: 1px solid var(--border);
+        margin-top: 2rem;
+      }
+
       @media (max-width: 640px) {
         header {
           padding: 0 1rem;
         }
         main {
           padding: 1.25rem 1rem;
-        }
-        .header-inner {
-          gap: 0.75rem;
         }
         .logo span {
           display: none;
@@ -460,7 +462,7 @@
             stroke="currentColor"
             stroke-width="2">
             <path
-              d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z" />
+              d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
           </svg>
           AI 검색
         </button>
@@ -468,7 +470,6 @@
     </header>
 
     <main>
-      <!-- AI 패널 -->
       <div class="ai-panel" id="ai-panel">
         <div class="ai-panel-header">
           <svg
@@ -478,213 +479,383 @@
             fill="none"
             stroke="#3C3489"
             stroke-width="2">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M12 16v-4M12 8h.01" />
+            <path
+              d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
           </svg>
-          <span>뭘 하고 싶은지 말해주세요 — 단축키를 찾아드릴게요</span>
+          <span>하고 싶은 작업을 말해주세요 — 단축키를 찾아드릴게요</span>
           <button class="ai-close" id="ai-close">×</button>
         </div>
         <div class="ai-input-row">
           <input
             id="ai-query"
             type="text"
-            placeholder="예: 여러 셀을 한 번에 합치고 싶어요" />
-          <button class="ai-ask-btn" id="ai-ask">물어보기</button>
+            placeholder="예: 여러 셀 내용을 한 줄로 합치고 싶어요" />
+          <button class="ai-ask-btn" id="ai-ask">찾아보기</button>
         </div>
         <div class="ai-answer" id="ai-answer"></div>
       </div>
 
+      <div class="job-tabs" id="job-tabs"></div>
+      <div class="job-desc" id="job-desc"></div>
       <div class="cats" id="cats"></div>
       <div class="result-count" id="count"></div>
       <div id="list"></div>
     </main>
 
+    <footer>
+      <p>
+        엑셀 단축키 모음 · Windows 기준 · 더 좋은 단축키가 있으면 알려주세요
+      </p>
+    </footer>
+
     <script>
-      const SHORTCUTS = [
+      const ALL = [
         // 탐색
         {
           cat: "탐색",
           desc: "셀 이동",
           tip: "방향키로 한 칸씩 이동",
           keys: [["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
         },
         {
           cat: "탐색",
           desc: "데이터 끝으로 이동",
-          tip: "빈 셀 전까지 이동",
+          tip: "빈 셀 전까지 한 번에",
           keys: [["Ctrl"], ["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
         },
         {
           cat: "탐색",
           desc: "시트 처음(A1)으로",
           tip: "",
           keys: [["Ctrl"], ["Home"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
         },
         {
           cat: "탐색",
           desc: "시트 끝으로",
-          tip: "",
+          tip: "데이터 마지막 셀",
           keys: [["Ctrl"], ["End"]],
+          jobs: ["전체", "일반", "데이터분석"],
         },
         {
           cat: "탐색",
           desc: "다음 시트로",
           tip: "",
           keys: [["Ctrl"], ["Page↓"]],
+          jobs: ["전체", "일반", "회계", "인사"],
         },
         {
           cat: "탐색",
           desc: "이전 시트로",
           tip: "",
           keys: [["Ctrl"], ["Page↑"]],
+          jobs: ["전체", "일반", "회계", "인사"],
         },
         {
           cat: "탐색",
           desc: "특정 셀로 이동",
           tip: "셀 주소 직접 입력",
           keys: [["Ctrl"], ["G"]],
+          jobs: ["전체", "일반", "데이터분석"],
         },
         {
           cat: "탐색",
-          desc: "이름 상자로 이동",
+          desc: "이름 상자로 커서 이동",
           tip: "F5 대신 빠른 이동",
           keys: [["F5"]],
+          jobs: ["전체", "일반"],
         },
         // 선택
         {
           cat: "선택",
           desc: "연속 범위 선택",
-          tip: "방향키와 함께 드래그 효과",
+          tip: "방향키와 함께",
           keys: [["Shift"], ["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
         },
         {
           cat: "선택",
           desc: "데이터 끝까지 선택",
           tip: "",
           keys: [["Ctrl"], ["Shift"], ["↑↓←→"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
         },
         {
           cat: "선택",
           desc: "행 전체 선택",
           tip: "",
           keys: [["Shift"], ["Space"]],
+          jobs: ["전체", "일반", "인사", "회계"],
         },
         {
           cat: "선택",
           desc: "열 전체 선택",
           tip: "",
           keys: [["Ctrl"], ["Space"]],
+          jobs: ["전체", "일반", "데이터분석"],
         },
         {
           cat: "선택",
           desc: "시트 전체 선택",
           tip: "",
           keys: [["Ctrl"], ["A"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
         },
         {
           cat: "선택",
           desc: "비연속 셀 추가 선택",
           tip: "Ctrl 누른 채 클릭",
           keys: [["Ctrl"], ["클릭"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
+        },
+        {
+          cat: "선택",
+          desc: "현재 영역 선택",
+          tip: "빈 셀로 둘러싼 범위",
+          keys: [["Ctrl"], ["Shift"], ["*"]],
+          jobs: ["전체", "데이터분석"],
         },
         // 편집
-        { cat: "편집", desc: "복사", tip: "", keys: [["Ctrl"], ["C"]] },
-        { cat: "편집", desc: "잘라내기", tip: "", keys: [["Ctrl"], ["X"]] },
-        { cat: "편집", desc: "붙여넣기", tip: "", keys: [["Ctrl"], ["V"]] },
+        {
+          cat: "편집",
+          desc: "복사",
+          tip: "",
+          keys: [["Ctrl"], ["C"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
+        {
+          cat: "편집",
+          desc: "잘라내기",
+          tip: "",
+          keys: [["Ctrl"], ["X"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
+        {
+          cat: "편집",
+          desc: "붙여넣기",
+          tip: "",
+          keys: [["Ctrl"], ["V"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
         {
           cat: "편집",
           desc: "선택하여 붙여넣기",
           tip: "값만, 서식만 등 선택 가능",
           keys: [["Ctrl"], ["Alt"], ["V"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
         },
-        { cat: "편집", desc: "실행 취소", tip: "", keys: [["Ctrl"], ["Z"]] },
-        { cat: "편집", desc: "다시 실행", tip: "", keys: [["Ctrl"], ["Y"]] },
-        { cat: "편집", desc: "셀 내용 삭제", tip: "", keys: [["Delete"]] },
+        {
+          cat: "편집",
+          desc: "실행 취소",
+          tip: "",
+          keys: [["Ctrl"], ["Z"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
+        {
+          cat: "편집",
+          desc: "다시 실행",
+          tip: "",
+          keys: [["Ctrl"], ["Y"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
+        {
+          cat: "편집",
+          desc: "셀 내용 삭제",
+          tip: "",
+          keys: [["Delete"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
         {
           cat: "편집",
           desc: "셀 편집 모드",
           tip: "커서를 셀 안으로",
           keys: [["F2"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
         },
         {
           cat: "편집",
           desc: "행 삽입",
           tip: "선택한 행 위에 삽입",
           keys: [["Ctrl"], ["+"]],
+          jobs: ["전체", "일반", "인사", "회계"],
         },
-        { cat: "편집", desc: "행/열 삭제", tip: "", keys: [["Ctrl"], ["-"]] },
+        {
+          cat: "편집",
+          desc: "행/열 삭제",
+          tip: "",
+          keys: [["Ctrl"], ["-"]],
+          jobs: ["전체", "일반", "인사", "회계", "데이터분석"],
+        },
         {
           cat: "편집",
           desc: "현재 날짜 입력",
           tip: "오늘 날짜 바로 입력",
           keys: [["Ctrl"], [";"]],
+          jobs: ["전체", "일반", "인사", "회계"],
         },
         {
           cat: "편집",
           desc: "현재 시간 입력",
           tip: "지금 시각 바로 입력",
           keys: [["Ctrl"], ["Shift"], [";"]],
+          jobs: ["전체", "일반", "인사"],
         },
         {
           cat: "편집",
           desc: "위 셀 내용 복사",
-          tip: "",
+          tip: "아래로 채울 때 빠름",
           keys: [["Ctrl"], ["D"]],
+          jobs: ["전체", "일반", "인사", "회계", "데이터분석"],
         },
         {
           cat: "편집",
           desc: "왼쪽 셀 내용 복사",
-          tip: "",
+          tip: "오른쪽으로 채울 때",
           keys: [["Ctrl"], ["R"]],
+          jobs: ["전체", "일반", "데이터분석"],
         },
-        { cat: "편집", desc: "찾기", tip: "", keys: [["Ctrl"], ["F"]] },
-        { cat: "편집", desc: "바꾸기", tip: "", keys: [["Ctrl"], ["H"]] },
+        {
+          cat: "편집",
+          desc: "찾기",
+          tip: "",
+          keys: [["Ctrl"], ["F"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
+        {
+          cat: "편집",
+          desc: "바꾸기",
+          tip: "",
+          keys: [["Ctrl"], ["H"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
+        {
+          cat: "편집",
+          desc: "메모 삽입",
+          tip: "셀에 메모 달기",
+          keys: [["Shift"], ["F2"]],
+          jobs: ["전체", "일반", "인사", "기획"],
+        },
         // 서식
-        { cat: "서식", desc: "굵게", tip: "", keys: [["Ctrl"], ["B"]] },
-        { cat: "서식", desc: "기울임", tip: "", keys: [["Ctrl"], ["I"]] },
-        { cat: "서식", desc: "밑줄", tip: "", keys: [["Ctrl"], ["U"]] },
-        { cat: "서식", desc: "취소선", tip: "", keys: [["Ctrl"], ["5"]] },
+        {
+          cat: "서식",
+          desc: "굵게",
+          tip: "",
+          keys: [["Ctrl"], ["B"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
+        },
+        {
+          cat: "서식",
+          desc: "기울임",
+          tip: "",
+          keys: [["Ctrl"], ["I"]],
+          jobs: ["전체", "일반", "기획"],
+        },
+        {
+          cat: "서식",
+          desc: "밑줄",
+          tip: "",
+          keys: [["Ctrl"], ["U"]],
+          jobs: ["전체", "일반", "회계", "기획"],
+        },
+        {
+          cat: "서식",
+          desc: "취소선",
+          tip: "",
+          keys: [["Ctrl"], ["5"]],
+          jobs: ["전체", "일반"],
+        },
         {
           cat: "서식",
           desc: "셀 서식 열기",
           tip: "숫자, 정렬, 테두리 등 모두",
           keys: [["Ctrl"], ["1"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
         },
         {
           cat: "서식",
           desc: "열 너비 자동 맞춤",
           tip: "내용에 딱 맞게",
           keys: [["Alt"], ["H"], ["O"], ["I"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
         },
         {
           cat: "서식",
           desc: "행 높이 자동 맞춤",
           tip: "",
           keys: [["Alt"], ["H"], ["O"], ["A"]],
+          jobs: ["전체", "일반", "인사"],
         },
         {
           cat: "서식",
           desc: "테두리 추가",
           tip: "",
           keys: [["Ctrl"], ["Shift"], ["7"]],
+          jobs: ["전체", "일반", "회계", "인사"],
         },
         {
           cat: "서식",
           desc: "테두리 제거",
           tip: "",
           keys: [["Ctrl"], ["Shift"], ["-"]],
+          jobs: ["전체", "일반"],
         },
         {
           cat: "서식",
           desc: "숫자 천단위 쉼표",
-          tip: "",
+          tip: "1000 → 1,000",
           keys: [["Ctrl"], ["Shift"], ["1"]],
+          jobs: ["전체", "회계", "데이터분석"],
         },
         {
           cat: "서식",
           desc: "퍼센트 형식",
-          tip: "",
+          tip: "0.15 → 15%",
           keys: [["Ctrl"], ["Shift"], ["5"]],
+          jobs: ["전체", "회계", "데이터분석", "기획"],
+        },
+        {
+          cat: "서식",
+          desc: "날짜 형식",
+          tip: "숫자를 날짜로",
+          keys: [["Ctrl"], ["Shift"], ["3"]],
+          jobs: ["전체", "인사", "회계"],
+        },
+        {
+          cat: "서식",
+          desc: "통화 형식",
+          tip: "₩ 표시 추가",
+          keys: [["Ctrl"], ["Shift"], ["4"]],
+          jobs: ["전체", "회계"],
+        },
+        {
+          cat: "서식",
+          desc: "열 숨기기",
+          tip: "",
+          keys: [["Ctrl"], ["0"]],
+          jobs: ["전체", "회계", "인사"],
+        },
+        {
+          cat: "서식",
+          desc: "행 숨기기",
+          tip: "",
+          keys: [["Ctrl"], ["9"]],
+          jobs: ["전체", "회계", "인사"],
+        },
+        {
+          cat: "서식",
+          desc: "열 숨기기 취소",
+          tip: "",
+          keys: [["Ctrl"], ["Shift"], ["0"]],
+          jobs: ["전체", "회계", "인사"],
+        },
+        {
+          cat: "서식",
+          desc: "행 숨기기 취소",
+          tip: "",
+          keys: [["Ctrl"], ["Shift"], ["9"]],
+          jobs: ["전체", "회계", "인사"],
         },
         // 수식
         {
@@ -692,71 +863,220 @@
           desc: "합계 자동 입력",
           tip: "범위 자동 감지",
           keys: [["Alt"], ["="]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
         },
         {
           cat: "수식",
           desc: "절대/상대 참조 전환",
           tip: "$A$1 ↔ A1 전환",
           keys: [["F4"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
         },
         {
           cat: "수식",
           desc: "함수 마법사",
           tip: "함수 검색 및 입력 도우미",
           keys: [["Shift"], ["F3"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
         },
         {
           cat: "수식",
           desc: "이름 정의",
           tip: "범위에 이름 붙이기",
           keys: [["Ctrl"], ["F3"]],
+          jobs: ["전체", "회계", "데이터분석"],
         },
         {
           cat: "수식",
           desc: "수식 표시 토글",
           tip: "수식/결과값 전환",
           keys: [["Ctrl"], ["`"]],
+          jobs: ["전체", "일반", "회계", "데이터분석"],
         },
         {
           cat: "수식",
           desc: "배열 수식 입력",
           tip: "Ctrl+Shift+Enter",
           keys: [["Ctrl"], ["Shift"], ["Enter"]],
+          jobs: ["전체", "데이터분석"],
         },
-        // 시트/파일
-        { cat: "시트·파일", desc: "저장", tip: "", keys: [["Ctrl"], ["S"]] },
+        {
+          cat: "수식",
+          desc: "수식 검사",
+          tip: "오류 셀 추적",
+          keys: [["Ctrl"], ["["]],
+          jobs: ["전체", "회계", "데이터분석"],
+        },
+        {
+          cat: "수식",
+          desc: "계산 강제 실행",
+          tip: "자동계산 꺼져 있을 때",
+          keys: [["F9"]],
+          jobs: ["전체", "회계", "데이터분석"],
+        },
+        // 시트·파일
+        {
+          cat: "시트·파일",
+          desc: "저장",
+          tip: "",
+          keys: [["Ctrl"], ["S"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
+        },
         {
           cat: "시트·파일",
           desc: "다른 이름으로 저장",
           tip: "",
           keys: [["F12"]],
+          jobs: ["전체", "일반", "회계", "인사", "데이터분석", "기획"],
         },
-        { cat: "시트·파일", desc: "새 파일", tip: "", keys: [["Ctrl"], ["N"]] },
+        {
+          cat: "시트·파일",
+          desc: "새 파일",
+          tip: "",
+          keys: [["Ctrl"], ["N"]],
+          jobs: ["전체", "일반"],
+        },
         {
           cat: "시트·파일",
           desc: "파일 열기",
           tip: "",
           keys: [["Ctrl"], ["O"]],
+          jobs: ["전체", "일반"],
         },
-        { cat: "시트·파일", desc: "인쇄", tip: "", keys: [["Ctrl"], ["P"]] },
+        {
+          cat: "시트·파일",
+          desc: "인쇄",
+          tip: "",
+          keys: [["Ctrl"], ["P"]],
+          jobs: ["전체", "일반", "회계", "인사", "기획"],
+        },
         {
           cat: "시트·파일",
           desc: "새 시트 삽입",
           tip: "",
           keys: [["Alt"], ["Shift"], ["F1"]],
+          jobs: ["전체", "일반", "회계", "인사"],
         },
         {
           cat: "시트·파일",
           desc: "시트 이름 변경",
-          tip: "탭 더블클릭과 동일",
+          tip: "",
           keys: [["Alt"], ["H"], ["O"], ["R"]],
+          jobs: ["전체", "일반", "회계", "인사"],
         },
-        { cat: "시트·파일", desc: "창 닫기", tip: "", keys: [["Ctrl"], ["W"]] },
+        {
+          cat: "시트·파일",
+          desc: "창 닫기",
+          tip: "",
+          keys: [["Ctrl"], ["W"]],
+          jobs: ["전체", "일반"],
+        },
+        {
+          cat: "시트·파일",
+          desc: "인쇄 미리보기",
+          tip: "",
+          keys: [["Ctrl"], ["F2"]],
+          jobs: ["전체", "회계", "인사", "기획"],
+        },
+        // 데이터분석 전용
+        {
+          cat: "데이터",
+          desc: "필터 켜기/끄기",
+          tip: "자동 필터 토글",
+          keys: [["Ctrl"], ["Shift"], ["L"]],
+          jobs: ["전체", "데이터분석", "회계", "인사"],
+        },
+        {
+          cat: "데이터",
+          desc: "필터 목록 열기",
+          tip: "해당 열 필터 드롭다운",
+          keys: [["Alt"], ["↓"]],
+          jobs: ["전체", "데이터분석", "회계", "인사"],
+        },
+        {
+          cat: "데이터",
+          desc: "피벗 테이블 새로고침",
+          tip: "",
+          keys: [["Alt"], ["F5"]],
+          jobs: ["전체", "데이터분석", "회계"],
+        },
+        {
+          cat: "데이터",
+          desc: "중복 제거",
+          tip: "메뉴 열기",
+          keys: [["Alt"], ["A"], ["M"]],
+          jobs: ["전체", "데이터분석", "인사"],
+        },
+        {
+          cat: "데이터",
+          desc: "텍스트 나누기",
+          tip: "구분자로 열 분리",
+          keys: [["Alt"], ["A"], ["E"]],
+          jobs: ["전체", "데이터분석"],
+        },
+        {
+          cat: "데이터",
+          desc: "정렬 오름차순",
+          tip: "",
+          keys: [["Alt"], ["A"], ["S"], ["A"]],
+          jobs: ["전체", "데이터분석", "인사", "회계"],
+        },
+        {
+          cat: "데이터",
+          desc: "정렬 내림차순",
+          tip: "",
+          keys: [["Alt"], ["A"], ["S"], ["D"]],
+          jobs: ["전체", "데이터분석", "인사", "회계"],
+        },
       ];
 
-      const CATS = ["전체", ...new Set(SHORTCUTS.map((s) => s.cat))];
+      const JOBS = [
+        { id: "전체", label: "전체", desc: "모든 단축키 목록이에요." },
+        {
+          id: "일반",
+          label: "일반 업무",
+          desc: "문서 작성, 데이터 입력 등 일상 업무에서 자주 쓰는 단축키예요.",
+        },
+        {
+          id: "회계",
+          label: "회계·재무",
+          desc: "숫자 서식, 합계, 통화 표시 등 회계 업무에 유용한 단축키예요.",
+        },
+        {
+          id: "인사",
+          label: "인사·총무",
+          desc: "명단 관리, 날짜 입력, 필터 등 인사 업무에 자주 쓰는 단축키예요.",
+        },
+        {
+          id: "데이터분석",
+          label: "데이터 분석",
+          desc: "필터, 정렬, 피벗, 수식 등 데이터 분석에 필수 단축키예요.",
+        },
+        {
+          id: "기획",
+          label: "기획·보고서",
+          desc: "서식, 인쇄, 문서 정리 등 보고서 작성에 유용한 단축키예요.",
+        },
+      ];
+
+      let activeJob = "전체";
       let activeCat = "전체";
       let query = "";
+
+      function getFiltered() {
+        const q = query.trim().toLowerCase();
+        return ALL.filter((s) => {
+          const jobOk = s.jobs.includes(activeJob);
+          const catOk = activeCat === "전체" || s.cat === activeCat;
+          const qOk =
+            !q ||
+            s.desc.toLowerCase().includes(q) ||
+            s.tip.toLowerCase().includes(q) ||
+            s.keys.flat().join("").toLowerCase().includes(q) ||
+            s.cat.toLowerCase().includes(q);
+          return jobOk && catOk && qOk;
+        });
+      }
 
       function renderKeys(keys) {
         return keys
@@ -767,22 +1087,46 @@
           .join("");
       }
 
-      function filtered() {
-        const q = query.trim().toLowerCase();
-        return SHORTCUTS.filter((s) => {
-          const catOk = activeCat === "전체" || s.cat === activeCat;
-          const qOk =
-            !q ||
-            s.desc.toLowerCase().includes(q) ||
-            s.tip.toLowerCase().includes(q) ||
-            s.keys.flat().join("").toLowerCase().includes(q) ||
-            s.cat.toLowerCase().includes(q);
-          return catOk && qOk;
+      function renderJobTabs() {
+        const el = document.getElementById("job-tabs");
+        el.innerHTML = JOBS.map(
+          (j) =>
+            `<button class="job-tab${j.id === activeJob ? " active" : ""}" data-job="${j.id}">${j.label}</button>`,
+        ).join("");
+        el.querySelectorAll(".job-tab").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            activeJob = btn.dataset.job;
+            activeCat = "전체";
+            renderJobTabs();
+            renderCats();
+            render();
+          });
+        });
+        document.getElementById("job-desc").textContent =
+          JOBS.find((j) => j.id === activeJob)?.desc || "";
+      }
+
+      function renderCats() {
+        const jobData = ALL.filter((s) => s.jobs.includes(activeJob));
+        const cats = ["전체", ...new Set(jobData.map((s) => s.cat))];
+        const el = document.getElementById("cats");
+        el.innerHTML = cats
+          .map(
+            (c) =>
+              `<button class="cat-btn${c === activeCat ? " active" : ""}" data-cat="${c}">${c}</button>`,
+          )
+          .join("");
+        el.querySelectorAll(".cat-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            activeCat = btn.dataset.cat;
+            renderCats();
+            render();
+          });
         });
       }
 
       function render() {
-        const data = filtered();
+        const data = getFiltered();
         document.getElementById("count").textContent = `총 ${data.length}개`;
         const grouped = {};
         data.forEach((s) => {
@@ -820,21 +1164,6 @@
           .join("");
       }
 
-      function renderCats() {
-        const el = document.getElementById("cats");
-        el.innerHTML = CATS.map(
-          (c) =>
-            `<button class="cat-btn${c === activeCat ? " active" : ""}" data-cat="${c}">${c}</button>`,
-        ).join("");
-        el.querySelectorAll(".cat-btn").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            activeCat = btn.dataset.cat;
-            renderCats();
-            render();
-          });
-        });
-      }
-
       document.getElementById("search").addEventListener("input", (e) => {
         query = e.target.value;
         render();
@@ -850,7 +1179,6 @@
         aiPanel.classList.toggle("open");
         if (aiPanel.classList.contains("open")) aiQuery.focus();
       });
-
       document.getElementById("ai-close").addEventListener("click", () => {
         aiPanel.classList.remove("open");
       });
@@ -859,10 +1187,8 @@
         const q = aiQuery.value.trim();
         if (!q) return;
         aiAsk.disabled = true;
-        aiAnswer.className = "ai-answer loading";
         aiAnswer.innerHTML =
           '<div class="typing-dots"><span>•</span><span>•</span><span>•</span></div>';
-
         try {
           const res = await fetch("https://api.anthropic.com/v1/messages", {
             method: "POST",
@@ -870,24 +1196,21 @@
             body: JSON.stringify({
               model: "claude-sonnet-4-6",
               max_tokens: 1000,
-              system: `당신은 엑셀 단축키 전문가입니다. 사용자가 하고 싶은 작업을 말하면, 관련 엑셀 단축키를 알려주세요.
-답변 형식:
-- 핵심 단축키를 먼저 굵게 강조해서 알려주세요 (예: **Ctrl + C**)
-- 단축키 사용법을 1-2줄로 간단히 설명
-- 연관된 단축키가 있으면 추가로 소개
-- 친근하고 간결하게 한국어로 답변
-- 없는 기능이면 솔직하게 알려주세요`,
+              system: `당신은 엑셀 단축키 전문가입니다. 사용자가 하고 싶은 작업을 말하면 관련 엑셀 단축키를 알려주세요.
+- 핵심 단축키를 **Ctrl + C** 형식으로 강조
+- 사용법을 1~2줄로 간결하게 설명
+- 연관 단축키가 있으면 추가 소개
+- 친근하고 간결한 한국어로 답변
+- Windows 기준으로 답변`,
               messages: [{ role: "user", content: q }],
             }),
           });
           const data = await res.json();
           const text = data.content?.[0]?.text || "답변을 가져오지 못했어요.";
-          aiAnswer.className = "ai-answer";
           aiAnswer.innerHTML = text
             .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
             .replace(/\n/g, "<br>");
         } catch (e) {
-          aiAnswer.className = "ai-answer";
           aiAnswer.textContent =
             "오류가 발생했어요. 잠시 후 다시 시도해주세요.";
         }
@@ -899,6 +1222,7 @@
         if (e.key === "Enter") askAI();
       });
 
+      renderJobTabs();
       renderCats();
       render();
     </script>
