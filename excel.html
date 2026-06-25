@@ -466,49 +466,100 @@
 
       footer { text-align: center; padding: 2rem; font-size: 13px; color: var(--text-hint); border-top: 1px solid var(--border); margin-top: 2rem; }
 
-      .bottom-nav {
+      /* 햄버거 버튼 (모바일 전용) */
+      .hamburger-btn {
         display: none;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: var(--surface);
-        border-top: 1px solid var(--border);
-        z-index: 100;
-        padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
-      }
-      .bottom-nav-inner {
-        display: flex;
-        justify-content: space-around;
         align-items: center;
+        justify-content: center;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 8px;
+        cursor: pointer;
+        color: var(--accent);
+        flex-shrink: 0;
       }
-      .bottom-nav-btn {
+      .hamburger-btn svg { width: 22px; height: 22px; display: block; }
+
+      /* 햄버거 메뉴 시트 */
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 400;
+        display: none;
+      }
+      .mobile-menu.open { display: block; }
+      .mobile-menu-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.45);
+        opacity: 0;
+        transition: opacity 0.25s;
+      }
+      .mobile-menu.open .mobile-menu-backdrop { opacity: 1; }
+      .mobile-menu-sheet {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        max-width: 320px;
+        background: var(--surface);
+        box-shadow: -4px 0 24px rgba(0,0,0,0.14);
+        padding: calc(1rem + env(safe-area-inset-top)) 1rem 1rem;
         display: flex;
         flex-direction: column;
+        gap: 8px;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+      }
+      .mobile-menu.open .mobile-menu-sheet { transform: translateX(0); }
+      .mobile-menu-header {
+        display: flex;
         align-items: center;
-        gap: 3px;
+        justify-content: space-between;
+        margin-bottom: 6px;
+      }
+      .mobile-menu-title { font-weight: 600; font-size: 15px; color: var(--text); }
+      .mobile-menu-close {
         background: none;
         border: none;
+        font-size: 26px;
+        line-height: 1;
         cursor: pointer;
-        padding: 4px 8px;
         color: var(--text-muted);
+        padding: 0;
         font-family: inherit;
-        font-size: 10px;
-        font-weight: 500;
-        transition: color 0.15s;
-        min-width: 56px;
       }
-      .bottom-nav-btn .bn-icon { font-size: 20px; line-height: 1; }
-      .bottom-nav-btn.ai { color: var(--accent); }
-      .bottom-nav-btn:active { color: var(--accent); }
+      .mobile-menu-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 14px 14px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+        color: var(--text);
+        font-size: 15px;
+        font-weight: 500;
+        font-family: inherit;
+        cursor: pointer;
+        text-align: left;
+        transition: background 0.15s;
+      }
+      .mobile-menu-item:active { background: var(--accent-light); }
+      .mobile-menu-item .mi-icon { font-size: 20px; line-height: 1; }
+      .mobile-menu-item.ai { color: var(--accent); border-color: var(--accent); background: var(--accent-light); }
 
       @media (max-width: 640px) {
         header { padding: 0 1rem; position: sticky; }
-        main { padding: 1rem; padding-bottom: 5rem; }
+        main { padding: 1rem; }
         .logo span { display: none; }
         .grid { grid-template-columns: 1fr; gap: 8px; }
         .header-btns { display: none; }
-        .bottom-nav { display: block; }
+        .hamburger-btn { display: flex; }
 
         /* 검색창 */
         #search { font-size: 15px; padding: 10px 12px 10px 36px; }
@@ -587,6 +638,11 @@
             AI 검색
           </button>
         </div>
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="메뉴 열기">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -732,25 +788,31 @@
       </div>
     </div>
 
-    <nav class="bottom-nav">
-      <div class="bottom-nav-inner">
-        <button class="bottom-nav-btn" id="bn-formula">
-          <span class="bn-icon">🔢</span>수식 생성
+    <!-- 모바일 햄버거 메뉴 -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-sheet">
+        <div class="mobile-menu-header">
+          <span class="mobile-menu-title">메뉴</span>
+          <button class="mobile-menu-close" id="mobile-menu-close" aria-label="메뉴 닫기">×</button>
+        </div>
+        <button class="mobile-menu-item ai" id="mm-ai">
+          <span class="mi-icon">✨</span>AI 검색
         </button>
-        <button class="bottom-nav-btn" id="bn-error">
-          <span class="bn-icon">🚨</span>에러 해결
+        <button class="mobile-menu-item" id="mm-formula">
+          <span class="mi-icon">🔢</span>수식 생성기
         </button>
-        <button class="bottom-nav-btn ai" id="bn-ai">
-          <span class="bn-icon">✨</span>AI 검색
+        <button class="mobile-menu-item" id="mm-error">
+          <span class="mi-icon">🚨</span>에러 해결사
         </button>
-        <button class="bottom-nav-btn" id="bn-quiz">
-          <span class="bn-icon">🎯</span>퀴즈
+        <button class="mobile-menu-item" id="mm-quiz">
+          <span class="mi-icon">🎯</span>단축키 퀴즈
         </button>
-        <button class="bottom-nav-btn" id="bn-auto">
-          <span class="bn-icon">⚡</span>자동화
+        <button class="mobile-menu-item" id="mm-auto">
+          <span class="mi-icon">⚡</span>자동화 조언
         </button>
       </div>
-    </nav>
+    </div>
 
     <script>
       const GROQ_KEY = "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";
@@ -965,6 +1027,7 @@
         if(e.key==="Escape") {
           closeModal();
           document.querySelectorAll(".tool-overlay.open").forEach(ov => closeTool(ov.id));
+          if(document.getElementById("mobile-menu").classList.contains("open")) closeMenu();
         }
       });
 
@@ -1160,14 +1223,29 @@
       renderCats();
       render();
 
-      // 하단 네비 이벤트
-      document.getElementById("bn-formula").addEventListener("click", () => openTool("overlay-formula"));
-      document.getElementById("bn-error").addEventListener("click", () => openTool("overlay-error"));
-      document.getElementById("bn-quiz").addEventListener("click", () => openTool("overlay-quiz"));
-      document.getElementById("bn-auto").addEventListener("click", () => openTool("overlay-auto"));
-      document.getElementById("bn-ai").addEventListener("click", () => {
-        aiPanel.classList.toggle("open");
-        if(aiPanel.classList.contains("open")) aiQuery.focus();
+      // 모바일 햄버거 메뉴
+      const mobileMenu = document.getElementById("mobile-menu");
+      function openMenu() {
+        mobileMenu.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        mobileMenu.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document.getElementById("hamburger-btn").addEventListener("click", openMenu);
+      document.getElementById("mobile-menu-close").addEventListener("click", closeMenu);
+      document.getElementById("mobile-menu-backdrop").addEventListener("click", closeMenu);
+
+      // 메뉴 항목 → 해당 기능 열기 (메뉴는 닫고)
+      document.getElementById("mm-formula").addEventListener("click", () => { closeMenu(); openTool("overlay-formula"); });
+      document.getElementById("mm-error").addEventListener("click", () => { closeMenu(); openTool("overlay-error"); });
+      document.getElementById("mm-quiz").addEventListener("click", () => { closeMenu(); openTool("overlay-quiz"); });
+      document.getElementById("mm-auto").addEventListener("click", () => { closeMenu(); openTool("overlay-auto"); });
+      document.getElementById("mm-ai").addEventListener("click", () => {
+        closeMenu();
+        aiPanel.classList.add("open");
+        aiQuery.focus();
       });
     </script>
 
